@@ -1,10 +1,14 @@
 bugs:
-- pop-up displays only the performance of last 5 guesses
-- user can guess an empty country after having guessed a country already
+- [x] pop-up displays only the performance of last 5 guesses
+- [x] no pup-up displayed after guessing the correct country
+- [ ] user can guess an empty country after having guessed a country already
 
 todo:
-- add pop-up when completing all 5 guesses
-- add share button with copy to clipboard
+- [x] add pop-up when completing all 5 guesses
+- [x] add share button with copy to clipboard
+- [ ] add how to play instructions
+- [ ] add a nice background
+- [ ] center the app name and subtitle
 - integrate with database
     - find olympic medals data
     - set up database

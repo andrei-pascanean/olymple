@@ -19,16 +19,16 @@
 <body>
     <div class="container" id="mainContainer">
         <div class="row justify-content-center mt-3 mb-3">
-            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
                 <h1>
                     Olymple
                 </h1>
             </div>
         </div>
         <div class="row justify-content-center mt-3 mb-3">
-            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+            <div class="col-12 col-md-8 col-lg-8 mx-auto text-center">
                 <h3>
-                    Guess the country based on its olympic record!
+                    Guess the country based on its medals!
                 </h3>
             </div>
         </div>
@@ -130,7 +130,7 @@
                     <input class="form-control" list="datalistCountries" id="searchCountries"
                         placeholder="Type to search a country...">
                     <datalist id="datalistCountries"></datalist>
-                    <button class="btn btn-outline-secondary" type="button" id="guess-button">Guess</button>
+                    <button class="btn btn-outline-secondary" type="button" id="guess-button">🌍 Guess</button>
                 </div>
             </div>
         </div>
@@ -191,6 +191,8 @@
 
 
         <script>
+            const gameId = 1
+
             const country_data = {
                 "🇫🇷 France": { lat: 46.227638, lon: 2.213749 },
                 "🇩🇪 Germany": { lat: 51.165691, lon: 10.451526 },
@@ -236,7 +238,6 @@
                     Math.sin(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.cos(dLon);
                 let brng = toDeg(Math.atan2(y, x));
                 brng = (brng + 360) % 360;
-                // Reduce to compass directions
                 const dirs = ["⬆️", "↗️", "➡️", "↘️", "⬇️", "↙️", "⬅️", "↖️"];
                 return dirs[Math.round(brng / 45) % 8];
             };
@@ -291,42 +292,6 @@
                 document.getElementById("guess-button").onclick = () => {
 
                     guesses = guesses + 1;
-
-                    if (guesses == 5) {
-                        document.getElementById("guess-button").disabled = true;
-
-                        const endGameModalBody = document.querySelector("#endGameModal .col");
-
-                        endGameModalBody.innerHTML = '';
-
-                        const resulth1 = document.createElement("h1");
-                        resulth1.innerText = "Congratulations!"
-                        endGameModalBody.appendChild(resulth1);
-
-                        const resulth2 = document.createElement("h2");
-                        resulth2.innerText = "Olymple"
-                        endGameModalBody.appendChild(resulth2);
-
-                        const resultp = document.createElement("p");
-                        resultp.innerText = "Puzzle #1"
-                        endGameModalBody.appendChild(resultp);
-
-                        const resultDiv = document.createElement("div");
-                        resultDiv.innerHTML = performances.join("<br>");
-                        endGameModalBody.appendChild(resultDiv);
-
-                        const shareButton = document.createElement("button");
-
-                        shareButton.type = "button";
-                        shareButton.className = "btn btn-primary mt-3 mb-3";
-                        shareButton.textContent = "Share";
-                        endGameModalBody.appendChild(shareButton);
-
-                        // add logic to copy performance to clipboard
-                        // add logic to have a toast notification show up confirming the copy 
-
-                        endGameModal.show()
-                    };
 
                     const distance = Math.round(haversine(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon));
 
@@ -404,6 +369,59 @@
 
                     result_prox.appendChild(proxInput);
                     guessResultDiv.appendChild(result_prox);
+
+                    if ((guesses == 5) || (distance == 0)) {
+                        document.getElementById("guess-button").disabled = true;
+
+                        const heroText = distance == 0 ? "Congratulations! 🏅" : "Better luck next time...";
+
+                        const endGameModalBody = document.querySelector("#endGameModal .col");
+
+                        endGameModalBody.innerHTML = '';
+
+                        const resulth1 = document.createElement("h1");
+                        resulth1.innerText = "Congratulations!"
+                        endGameModalBody.appendChild(resulth1);
+
+                        const resulth2 = document.createElement("h2");
+                        resulth2.innerText = "Olymple"
+                        endGameModalBody.appendChild(resulth2);
+
+                        const resultp = document.createElement("p");
+                        resultp.innerText = `Puzzle #${gameId}`
+                        endGameModalBody.appendChild(resultp);
+
+                        const resultDiv = document.createElement("div");
+                        resultDiv.innerHTML = performances.join("<br>");
+                        console.log(`${performances.join("<br>")}`);
+                        endGameModalBody.appendChild(resultDiv);
+
+                        const shareButton = document.createElement("button");
+
+                        shareButton.type = "button";
+                        shareButton.className = "btn btn-primary mt-3 mb-3";
+                        shareButton.textContent = "Share";
+                        shareButton.id = "shareButton"
+                        endGameModalBody.appendChild(shareButton);
+
+                        endGameModal.show()
+
+                        document.getElementById("shareButton").addEventListener('click', function () {
+                            const clipBoardText = [
+                                `#Olymple #${gameId} ${guesses}/5`,
+                                performances.join("\n"),
+                                "https://olymple.vercel.app"
+                            ].join("\n");
+                            console.log(`${clipBoardText}`);
+                            navigator.clipboard.writeText(clipBoardText)
+                                .then(() => {
+                                    alert('Text copied to clipboard!');
+                                })
+                                .catch(err => {
+                                    alert('Failed to copy text: ' + err);
+                                });
+                        })
+                    };
 
                     document.getElementById("searchCountries").value = "";
 
