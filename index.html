@@ -18,6 +18,41 @@
 
 <body>
     <div class="container" id="mainContainer">
+        <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row justify-content-center">
+                            <div class="col text-center">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+            <div id="liveErrorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body bg-danger-subtle text-danger-emphasis">
+                    Please select a valid country from the list!
+                </div>
+            </div>
+        </div>
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+            <div id="liveCorrectAnswerToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+                data-bs-autohide="false">
+                <div class="toast-body d-flex bg-primary-subtle text-primary-emphasis justify-content-between">
+                    <span id="liveCorrectAnswerToastMessage"></span>
+                    <button type="button" class="btn-close me-2 m-auto " data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
                 <h1>
@@ -33,11 +68,18 @@
             </div>
         </div>
         <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
+                <h5>
+                    Total: 🏅 953
+                </h5>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-3">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th class="text-center" scope="col">☀️ Summer Sport</th>
+                            <th class="text-center" scope="col">☀️ Top 5 Summer Sports</th>
                             <th class="text-center" scope="col">🥇 Gold</th>
                             <th class="text-center" scope="col">🥈 Silver</th>
                             <th class="text-center" scope="col">🥉 Bronze</th>
@@ -46,7 +88,7 @@
                     <tbody>
                         <tr>
                             <td class="text-center">🤺 Fencing</td>
-                            <td class="text-center">45</td>
+                            <td class="text-center">16</td>
                             <td class="text-center">47</td>
                             <td class="text-center">38</td>
                         </tr>
@@ -83,7 +125,7 @@
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th class="text-center" scope="col">❄️ Winter Sport</th>
+                            <th class="text-center" scope="col">❄️ Top 5 Winter Sport</th>
                             <th class="text-center" scope="col">🥇 Gold</th>
                             <th class="text-center" scope="col">🥈 Silver</th>
                             <th class="text-center" scope="col">🥉 Bronze</th>
@@ -137,58 +179,54 @@
         <div class="row justify-content-center mb-2">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <div class="row g-1" id="guess_1">
-                    <input class="form-control text-center" type="text" value="" aria-label="" disabled readonly>
+                    <div class="col-12"><input class="form-control text-center" type="text" value="" aria-label=""
+                            disabled readonly>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-2">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <div class="row g-1" id="guess_2">
-                    <input class="form-control text-center" type="text" value="" aria-label="" disabled readonly>
+                    <div class="col-12"><input class="form-control text-center" type="text" value="" aria-label=""
+                            disabled readonly>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-2">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <div class="row g-1" id="guess_3">
-                    <input class="form-control text-center" type="text" value="" aria-label="" disabled readonly>
+                    <div class="col-12"><input class="form-control text-center" type="text" value="" aria-label=""
+                            disabled readonly>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-2">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <div class="row g-1" id="guess_4">
-                    <input class="form-control text-center" type="text" value="" aria-label="" disabled readonly>
+                    <div class="col-12"><input class="form-control text-center" type="text" value="" aria-label=""
+                            disabled readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-2">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="row g-1" id="guess_5">
+                    <div class="col-12"><input class="form-control text-center" type="text" value="" aria-label=""
+                            disabled readonly>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-5">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
-                <div class="row g-1" id="guess_5">
-                    <input class="form-control text-center" type="text" value="" aria-label="" disabled readonly>
+                <div class="row g-1" id="share_button_placeholder">
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row justify-content-center">
-                            <div class="col text-center">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
         <script>
             const gameId = 1
@@ -266,10 +304,23 @@
                         n_grey = 5 - (n_green + n_orange)
                     }
                 }
-                console.log((green.repeat(n_green) + orange.repeat(n_orange) + grey.repeat(n_grey)))
 
                 return (green.repeat(n_green) + orange.repeat(n_orange) + grey.repeat(n_grey))
             };
+
+            function shareButtonCopyClipboard(button) {
+                const clipBoardText = [
+                    `#Olymple #${gameId} ${guesses}/5`,
+                    performances.join("\n"),
+                    "https://olymple.vercel.app"
+                ].join("\n");
+                navigator.clipboard.writeText(clipBoardText)
+                    .then(() => {
+                        button.classList.remove('btn-primary');
+                        button.classList.add('btn-success');
+                        button.textContent = "Copied to clipboard!";
+                    });
+            }
 
             countries.slice(0, 5).forEach(country => {
                 const option = document.createElement("option");
@@ -288,153 +339,168 @@
                     option.value = match;
                     datalist.appendChild(option);
                 });
+            });
 
-                document.getElementById("guess-button").onclick = () => {
+            document.getElementById("guess-button").onclick = () => {
 
-                    guesses = guesses + 1;
+                if (!country_data[input.value]) {
+                    const errorToast = bootstrap.Toast.getOrCreateInstance(document.getElementById("liveErrorToast"));
+                    errorToast.show();
+                    return;
+                }
 
-                    const distance = Math.round(haversine(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon));
 
-                    let heading = getDirection(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon);
+                guesses = guesses + 1;
 
-                    const prox = getProximity(distance)
+                const distance = Math.round(haversine(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon));
 
-                    const perf = getPerformance(prox)
-                    performances.push(perf)
+                let heading = getDirection(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon);
 
-                    if (distance == 0) {
-                        heading = '🎉'
-                    }
+                const prox = getProximity(distance)
 
-                    console.log(`Your guess: ${input.value}... ${distance}km ${heading} ${prox}% ${perf}`);
+                const perf = getPerformance(prox)
+                performances.push(perf)
 
-                    // 5. replace the div that matches n_guesses with the data
-                    const guessResultDiv = document.getElementById(`guess_${guesses}`);
-                    guessResultDiv.innerHTML = "";
+                if (distance == 0) {
+                    heading = '🎉'
+                }
 
-                    const result_country = document.createElement("div");
-                    result_country.classList.add("col-5");
+                // console.log(`Your guess: ${input.value}... ${distance}km ${heading} ${prox}% ${perf}`);
 
-                    const countryInput = document.createElement("input");
-                    countryInput.classList.add("form-control", "text-center");
-                    countryInput.type = "text";
-                    countryInput.setAttribute("aria-label", "");
-                    countryInput.setAttribute("value", input.value);
-                    countryInput.disabled = true;
-                    countryInput.readOnly = true;
+                // 5. replace the div that matches n_guesses with the data
+                const guessResultDiv = document.getElementById(`guess_${guesses}`);
+                guessResultDiv.innerHTML = "";
 
-                    result_country.appendChild(countryInput);
-                    guessResultDiv.appendChild(result_country);
+                const result_country = document.createElement("div");
+                result_country.classList.add("col-5");
 
-                    const result_distance = document.createElement("div");
-                    result_distance.classList.add("col-3");
+                const countryInput = document.createElement("input");
+                countryInput.classList.add("form-control", "text-center");
+                countryInput.type = "text";
+                countryInput.setAttribute("aria-label", "");
+                countryInput.setAttribute("value", input.value);
+                countryInput.disabled = true;
+                countryInput.readOnly = true;
 
-                    const distanceInput = document.createElement("input");
-                    distanceInput.classList.add("form-control", "text-center");
-                    distanceInput.type = "text";
-                    distanceInput.setAttribute("aria-label", "");
-                    distanceInput.setAttribute("value", distance + "km");
-                    distanceInput.disabled = true;
-                    distanceInput.readOnly = true;
+                result_country.appendChild(countryInput);
+                guessResultDiv.appendChild(result_country);
 
-                    result_distance.appendChild(distanceInput);
-                    guessResultDiv.appendChild(result_distance);
+                const result_distance = document.createElement("div");
+                result_distance.classList.add("col-3");
 
-                    const result_heading = document.createElement("div");
-                    result_heading.classList.add("col-2");
+                const distanceInput = document.createElement("input");
+                distanceInput.classList.add("form-control", "text-center");
+                distanceInput.type = "text";
+                distanceInput.setAttribute("aria-label", "");
+                distanceInput.setAttribute("value", distance + "km");
+                distanceInput.disabled = true;
+                distanceInput.readOnly = true;
 
-                    const headingInput = document.createElement("input");
-                    headingInput.classList.add("form-control", "text-center");
-                    headingInput.type = "text";
-                    headingInput.setAttribute("aria-label", "");
-                    headingInput.setAttribute("value", heading);
-                    headingInput.disabled = true;
-                    headingInput.readOnly = true;
+                result_distance.appendChild(distanceInput);
+                guessResultDiv.appendChild(result_distance);
 
-                    result_heading.appendChild(headingInput);
-                    guessResultDiv.appendChild(result_heading);
+                const result_heading = document.createElement("div");
+                result_heading.classList.add("col-2");
 
-                    document.getElementById("searchCountries").value = "";
+                const headingInput = document.createElement("input");
+                headingInput.classList.add("form-control", "text-center");
+                headingInput.type = "text";
+                headingInput.setAttribute("aria-label", "");
+                headingInput.setAttribute("value", heading);
+                headingInput.disabled = true;
+                headingInput.readOnly = true;
 
-                    const result_prox = document.createElement("div");
-                    result_prox.classList.add("col-2");
+                result_heading.appendChild(headingInput);
+                guessResultDiv.appendChild(result_heading);
 
-                    const proxInput = document.createElement("input");
-                    proxInput.classList.add("form-control", "text-center");
-                    proxInput.type = "text";
-                    proxInput.setAttribute("aria-label", "");
-                    proxInput.setAttribute("value", prox + "%");
-                    proxInput.disabled = true;
-                    proxInput.readOnly = true;
+                document.getElementById("searchCountries").value = "";
 
-                    result_prox.appendChild(proxInput);
-                    guessResultDiv.appendChild(result_prox);
+                const result_prox = document.createElement("div");
+                result_prox.classList.add("col-2");
 
-                    if ((guesses == 5) || (distance == 0)) {
-                        document.getElementById("guess-button").disabled = true;
+                const proxInput = document.createElement("input");
+                proxInput.classList.add("form-control", "text-center");
+                proxInput.type = "text";
+                proxInput.setAttribute("aria-label", "");
+                proxInput.setAttribute("value", prox + "%");
+                proxInput.disabled = true;
+                proxInput.readOnly = true;
 
-                        const heroText = distance == 0 ? "Congratulations! 🏅" : "Better luck next time...";
+                result_prox.appendChild(proxInput);
+                guessResultDiv.appendChild(result_prox);
 
-                        const endGameModalBody = document.querySelector("#endGameModal .col");
+                if ((guesses == 5) || (distance == 0)) {
+                    document.getElementById("guess-button").disabled = true;
 
-                        endGameModalBody.innerHTML = '';
+                    const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
+                    const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
+                    correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
+                    const correctAnswerToast = bootstrap.Toast.getOrCreateInstance(correctAnswerToastEl);
+                    correctAnswerToast.show();
 
-                        const resulth1 = document.createElement("h1");
-                        resulth1.innerText = "Congratulations!"
-                        endGameModalBody.appendChild(resulth1);
+                    const heroText = distance == 0 ? "Congratulations! 🏅" : "Better luck next time...";
 
-                        const resulth2 = document.createElement("h2");
-                        resulth2.innerText = "Olymple"
-                        endGameModalBody.appendChild(resulth2);
+                    const endGameModalBody = document.querySelector("#endGameModal .col");
 
-                        const resultp = document.createElement("p");
-                        resultp.innerText = `Puzzle #${gameId}`
-                        endGameModalBody.appendChild(resultp);
+                    endGameModalBody.innerHTML = '';
 
-                        const resultDiv = document.createElement("div");
-                        resultDiv.innerHTML = performances.join("<br>");
-                        console.log(`${performances.join("<br>")}`);
-                        endGameModalBody.appendChild(resultDiv);
+                    const resulth1 = document.createElement("h1");
+                    resulth1.innerText = heroText
+                    endGameModalBody.appendChild(resulth1);
 
-                        const shareButton = document.createElement("button");
+                    const resulth2 = document.createElement("h2");
+                    resulth2.innerText = "Olymple"
+                    endGameModalBody.appendChild(resulth2);
 
-                        shareButton.type = "button";
-                        shareButton.className = "btn btn-primary mt-3 mb-3";
-                        shareButton.textContent = "Share";
-                        shareButton.id = "shareButton"
-                        endGameModalBody.appendChild(shareButton);
+                    const resultp = document.createElement("p");
+                    resultp.innerText = `Puzzle #${gameId}`
+                    endGameModalBody.appendChild(resultp);
 
-                        endGameModal.show()
+                    const resultDiv = document.createElement("div");
+                    resultDiv.innerHTML = performances.join("<br>");
+                    endGameModalBody.appendChild(resultDiv);
 
-                        document.getElementById("shareButton").addEventListener('click', function () {
-                            const clipBoardText = [
-                                `#Olymple #${gameId} ${guesses}/5`,
-                                performances.join("\n"),
-                                "https://olymple.vercel.app"
-                            ].join("\n");
-                            console.log(`${clipBoardText}`);
-                            navigator.clipboard.writeText(clipBoardText)
-                                .then(() => {
-                                    alert('Text copied to clipboard!');
-                                })
-                                .catch(err => {
-                                    alert('Failed to copy text: ' + err);
-                                });
-                        })
-                    };
+                    const shareButton = document.createElement("button");
 
-                    document.getElementById("searchCountries").value = "";
+                    shareButton.type = "button";
+                    shareButton.className = "btn btn-primary mt-3 mb-3";
+                    shareButton.textContent = "Share";
+                    shareButton.id = "shareButton"
+                    endGameModalBody.appendChild(shareButton);
 
-                    datalist.innerHTML = "";
+                    const share_button_placeholder = document.getElementById("share_button_placeholder");
+                    const shareBtnCol = document.createElement("div");
+                    shareBtnCol.className = "col-12";
 
-                    countries.slice(0, 5).forEach(country => {
-                        const option = document.createElement("option");
-                        option.value = country;
-                        datalist.appendChild(option);
-                    });
+                    const shareBtn = document.createElement("button");
+                    shareBtn.type = "button";
+                    shareBtn.className = "form-control btn btn-primary text-center";
+                    shareBtn.textContent = "Share";
+                    shareBtn.id = "globalShareButton";
+
+                    shareBtnCol.appendChild(shareBtn);
+                    share_button_placeholder.appendChild(shareBtnCol);
+
+                    endGameModal.show()
+
+                    document.getElementById("shareButton").addEventListener('click', function () {
+                        shareButtonCopyClipboard(this)
+                    })
+                    document.getElementById("globalShareButton").addEventListener('click', function () {
+                        shareButtonCopyClipboard(this)
+                    })
                 };
 
-            });
+                document.getElementById("searchCountries").value = "";
+
+                datalist.innerHTML = "";
+
+                countries.slice(0, 5).forEach(country => {
+                    const option = document.createElement("option");
+                    option.value = country;
+                    datalist.appendChild(option);
+                });
+            };
         </script>
 </body>
 
