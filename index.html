@@ -316,24 +316,12 @@
                     });
             }
 
-            countries.slice(0, 5).forEach(country => {
+            countries.forEach(country => {
                 const option = document.createElement("option");
                 option.value = country;
                 datalist.appendChild(option);
             });
 
-            input.addEventListener("input", function () {
-                const value = this.value.toLowerCase();
-                const matches = countries.filter(country => country.toLocaleLowerCase().includes(value)).slice(0, 5);
-
-                datalist.innerHTML = "";
-
-                matches.forEach(match => {
-                    const option = document.createElement("option");
-                    option.value = match;
-                    datalist.appendChild(option);
-                });
-            });
 
             document.getElementById("guess-button").onclick = () => {
 
@@ -480,16 +468,6 @@
                         shareButtonCopyClipboard(this)
                     })
                 };
-
-                document.getElementById("searchCountries").value = "";
-
-                datalist.innerHTML = "";
-
-                countries.slice(0, 5).forEach(country => {
-                    const option = document.createElement("option");
-                    option.value = country;
-                    datalist.appendChild(option);
-                });
             };
         </script>
 </body>
