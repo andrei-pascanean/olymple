@@ -349,7 +349,6 @@
                     return;
                 }
 
-
                 guesses = guesses + 1;
 
                 const distance = Math.round(haversine(country_data[input.value].lat, country_data[input.value].lon, country_data[correct_country].lat, country_data[correct_country].lon));
@@ -365,9 +364,6 @@
                     heading = '🎉'
                 }
 
-                // console.log(`Your guess: ${input.value}... ${distance}km ${heading} ${prox}% ${perf}`);
-
-                // 5. replace the div that matches n_guesses with the data
                 const guessResultDiv = document.getElementById(`guess_${guesses}`);
                 guessResultDiv.innerHTML = "";
 
