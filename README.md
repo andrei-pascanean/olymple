@@ -5,8 +5,8 @@ bugs:
 - [x] user can guess an empty country after having guessed a country already
 - [x] clicking on guess without filling in a country blocks the whole app
 - [x] user does not know the correct answer in case they fail to guess it
-- [ ] list of countries in dropdown is buggy
-- [ ] default view is too zoomed in on PC and too zoomed out on mobile
+- [x] list of countries in dropdown is buggy
+- [x] default view is too zoomed in on PC and too zoomed out on mobile
 
 todo:
 - [x] add pop-up when completing all 5 guesses
