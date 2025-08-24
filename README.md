@@ -11,16 +11,21 @@ todo:
 - [x] add pop-up when completing all 5 guesses
 - [x] add share button with copy to clipboard
 - [x] add share button at bottom of guesses
+- [x] center the app name and subtitle
 - [ ] make the correct guess show up in gold
 - [ ] add how to play instructions
 - [ ] add a nice background
-- [ ] center the app name and subtitle
 - integrate with database
     - find olympic medals data
     - set up database
     - build BE endpoint for fetching country data
     - query endpoint in FE
 - [ ] add animation when showing performance
+
+nice code to-do:
+- [ ] separate js and css into external files
+- [ ] move from onclick to addeventlistener
+- [ ] check if im using const and let properly
 
 self-ideated features:
 - [ ] showcase 4th place finishes for countries with no medals
