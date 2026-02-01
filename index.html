@@ -574,6 +574,9 @@
                     proxInput.type = "text";
                     proxInput.setAttribute("aria-label", "");
                     proxInput.setAttribute("value", prox + "%");
+                    proxInput.title = prox === 100
+                        ? "Perfect! You found the correct country!"
+                        : `Your guess is ${distance.toLocaleString()}km away (${prox}% accuracy based on max distance of 20,000km)`;
                     proxInput.disabled = true;
                     proxInput.readOnly = true;
 
