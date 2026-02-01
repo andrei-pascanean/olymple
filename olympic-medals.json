@@ -1,0 +1,5860 @@
+{
+  "USA": {
+    "name": "United States",
+    "code": "USA",
+    "flag": "🇺🇸",
+    "totalMedals": 3003,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 345,
+        "silver": 269,
+        "bronze": 213
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 257,
+        "silver": 184,
+        "bronze": 145
+      },
+      {
+        "sport": "Diving",
+        "emoji": "🤿",
+        "gold": 48,
+        "silver": 46,
+        "bronze": 48
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 57,
+        "silver": 44,
+        "bronze": 40
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 37,
+        "silver": 44,
+        "bronze": 39
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 30,
+        "silver": 19,
+        "bronze": 21
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 16,
+        "silver": 18,
+        "bronze": 21
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 17,
+        "silver": 21,
+        "bronze": 10
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 23,
+        "silver": 11,
+        "bronze": 10
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 12,
+        "silver": 15,
+        "bronze": 11
+      }
+    ]
+  },
+  "GER": {
+    "name": "Germany",
+    "code": "GER",
+    "flag": "🇩🇪",
+    "totalMedals": 1097,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 29,
+        "silver": 46,
+        "bronze": 45
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 38,
+        "silver": 25,
+        "bronze": 26
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 16,
+        "silver": 24,
+        "bronze": 41
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 32,
+        "silver": 17,
+        "bronze": 18
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 27,
+        "silver": 20,
+        "bronze": 14
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 23,
+        "silver": 22,
+        "bronze": 13
+      },
+      {
+        "sport": "Luge",
+        "emoji": "🛷",
+        "gold": 27,
+        "silver": 16,
+        "bronze": 11
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 14,
+        "silver": 16,
+        "bronze": 10
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 14,
+        "silver": 10,
+        "bronze": 10
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 17,
+        "silver": 9,
+        "bronze": 8
+      }
+    ]
+  },
+  "GBR": {
+    "name": "United Kingdom",
+    "code": "GBR",
+    "flag": "🇬🇧",
+    "totalMedals": 969,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 58,
+        "silver": 84,
+        "bronze": 75
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 38,
+        "silver": 35,
+        "bronze": 28
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 26,
+        "silver": 31,
+        "bronze": 31
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 31,
+        "silver": 25,
+        "bronze": 14
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 21,
+        "silver": 15,
+        "bronze": 28
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Skeleton",
+        "emoji": "🛷",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 5
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 4,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Curling",
+        "emoji": "🥌",
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1
+      }
+    ]
+  },
+  "FRA": {
+    "name": "France",
+    "code": "FRA",
+    "flag": "🇫🇷",
+    "totalMedals": 924,
+    "summer": [
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 45,
+        "silver": 43,
+        "bronze": 36
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 41,
+        "silver": 28,
+        "bronze": 26
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 14,
+        "silver": 27,
+        "bronze": 30
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 16,
+        "silver": 13,
+        "bronze": 28
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 12,
+        "silver": 17,
+        "bronze": 24
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 18,
+        "silver": 20,
+        "bronze": 19
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 13,
+        "silver": 10,
+        "bronze": 13
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 3,
+        "silver": 7,
+        "bronze": 6
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 4,
+        "silver": 6,
+        "bronze": 5
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 7
+      }
+    ]
+  },
+  "ITA": {
+    "name": "Italy",
+    "code": "ITA",
+    "flag": "🇮🇹",
+    "totalMedals": 778,
+    "summer": [
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 51,
+        "silver": 46,
+        "bronze": 35
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 24,
+        "silver": 16,
+        "bronze": 26
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 35,
+        "silver": 16,
+        "bronze": 12
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 15,
+        "silver": 16,
+        "bronze": 18
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 16,
+        "silver": 16,
+        "bronze": 11
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 9,
+        "silver": 14,
+        "bronze": 14
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 14,
+        "silver": 10,
+        "bronze": 10
+      },
+      {
+        "sport": "Luge",
+        "emoji": "🛷",
+        "gold": 7,
+        "silver": 4,
+        "bronze": 8
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 7
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 5,
+        "silver": 4,
+        "bronze": 4
+      }
+    ]
+  },
+  "CHN": {
+    "name": "China",
+    "code": "CHN",
+    "flag": "🇨🇳",
+    "totalMedals": 767,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 34,
+        "silver": 25,
+        "bronze": 26
+      },
+      {
+        "sport": "Diving",
+        "emoji": "🤿",
+        "gold": 49,
+        "silver": 24,
+        "bronze": 10
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 33,
+        "silver": 26,
+        "bronze": 13
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 26,
+        "silver": 16,
+        "bronze": 25
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 39,
+        "silver": 16,
+        "bronze": 8
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 12,
+        "silver": 17,
+        "bronze": 13
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 7,
+        "silver": 10,
+        "bronze": 4
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 3,
+        "silver": 7,
+        "bronze": 6
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 5,
+        "silver": 3,
+        "bronze": 5
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      }
+    ]
+  },
+  "RUS": {
+    "name": "Russia",
+    "code": "RUS",
+    "flag": "🇷🇺",
+    "totalMedals": 751,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 33,
+        "silver": 27,
+        "bronze": 27
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 35,
+        "silver": 14,
+        "bronze": 18
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 20,
+        "silver": 22,
+        "bronze": 19
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 9,
+        "silver": 18,
+        "bronze": 14
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 13,
+        "silver": 16,
+        "bronze": 11
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 19,
+        "silver": 17,
+        "bronze": 17
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 20,
+        "silver": 21,
+        "bronze": 8
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 13,
+        "silver": 10,
+        "bronze": 12
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 4,
+        "silver": 7,
+        "bronze": 9
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 10
+      }
+    ]
+  },
+  "SWE": {
+    "name": "Sweden",
+    "code": "SWE",
+    "flag": "🇸🇪",
+    "totalMedals": 704,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 28,
+        "silver": 27,
+        "bronze": 31
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 23,
+        "silver": 22,
+        "bronze": 41
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 15,
+        "silver": 24,
+        "bronze": 18
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 9,
+        "silver": 17,
+        "bronze": 16
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 15,
+        "silver": 13,
+        "bronze": 12
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 33,
+        "silver": 27,
+        "bronze": 29
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 10,
+        "silver": 2,
+        "bronze": 10
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 9,
+        "silver": 4,
+        "bronze": 5
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 6,
+        "silver": 4,
+        "bronze": 7
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 4,
+        "silver": 5,
+        "bronze": 5
+      }
+    ]
+  },
+  "JPN": {
+    "name": "Japan",
+    "code": "JPN",
+    "flag": "🇯🇵",
+    "totalMedals": 613,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 33,
+        "silver": 34,
+        "bronze": 35
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 49,
+        "silver": 21,
+        "bronze": 27
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 25,
+        "silver": 27,
+        "bronze": 32
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 36,
+        "silver": 22,
+        "bronze": 17
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 7,
+        "silver": 10,
+        "bronze": 10
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 9,
+        "silver": 14,
+        "bronze": 16
+      },
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 5,
+        "silver": 7,
+        "bronze": 4
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 5,
+        "silver": 6,
+        "bronze": 4
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 5,
+        "silver": 6,
+        "bronze": 3
+      },
+      {
+        "sport": "Nordic Combined",
+        "emoji": "🎿",
+        "gold": 2,
+        "silver": 5,
+        "bronze": 3
+      }
+    ]
+  },
+  "AUS": {
+    "name": "Australia",
+    "code": "AUS",
+    "flag": "🇦🇺",
+    "totalMedals": 590,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 66,
+        "silver": 69,
+        "bronze": 84
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 23,
+        "silver": 30,
+        "bronze": 29
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 17,
+        "silver": 19,
+        "bronze": 20
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 13,
+        "silver": 16,
+        "bronze": 17
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 13,
+        "silver": 8,
+        "bronze": 8
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 2
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "NOR": {
+    "name": "Norway",
+    "code": "NOR",
+    "flag": "🇳🇴",
+    "totalMedals": 586,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 13,
+        "silver": 8,
+        "bronze": 11
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 14,
+        "silver": 11,
+        "bronze": 4
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 8,
+        "silver": 8,
+        "bronze": 8
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 3,
+        "silver": 7,
+        "bronze": 8
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 6,
+        "silver": 4,
+        "bronze": 4
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 58,
+        "silver": 48,
+        "bronze": 38
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 28,
+        "silver": 29,
+        "bronze": 32
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 22,
+        "silver": 19,
+        "bronze": 16
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 13,
+        "silver": 14,
+        "bronze": 15
+      },
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 11,
+        "silver": 11,
+        "bronze": 14
+      }
+    ]
+  },
+  "CAN": {
+    "name": "Canada",
+    "code": "CAN",
+    "flag": "🇨🇦",
+    "totalMedals": 571,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 15,
+        "silver": 18,
+        "bronze": 31
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 11,
+        "silver": 19,
+        "bronze": 30
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 10,
+        "silver": 17,
+        "bronze": 17
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 4,
+        "silver": 11,
+        "bronze": 11
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 4,
+        "silver": 7,
+        "bronze": 7
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 10,
+        "silver": 16,
+        "bronze": 16
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 10,
+        "silver": 13,
+        "bronze": 16
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 13,
+        "silver": 12,
+        "bronze": 6
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 6,
+        "silver": 11,
+        "bronze": 13
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 13,
+        "silver": 6,
+        "bronze": 4
+      }
+    ]
+  },
+  "HUN": {
+    "name": "Hungary",
+    "code": "HUN",
+    "flag": "🇭🇺",
+    "totalMedals": 554,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 41,
+        "silver": 28,
+        "bronze": 23
+      },
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 39,
+        "silver": 24,
+        "bronze": 28
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 29,
+        "silver": 31,
+        "bronze": 27
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 20,
+        "silver": 17,
+        "bronze": 19
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 10,
+        "silver": 13,
+        "bronze": 18
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 5
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Curling",
+        "emoji": "🥌",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "FIN": {
+    "name": "Finland",
+    "code": "FIN",
+    "flag": "🇫🇮",
+    "totalMedals": 497,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 48,
+        "silver": 36,
+        "bronze": 31
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 26,
+        "silver": 28,
+        "bronze": 30
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 6,
+        "silver": 5,
+        "bronze": 12
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 4,
+        "silver": 7,
+        "bronze": 10
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 13
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 24,
+        "silver": 29,
+        "bronze": 37
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 8,
+        "silver": 9,
+        "bronze": 10
+      },
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 10,
+        "silver": 8,
+        "bronze": 4
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 8
+      },
+      {
+        "sport": "Nordic Combined",
+        "emoji": "🎿",
+        "gold": 3,
+        "silver": 8,
+        "bronze": 2
+      }
+    ]
+  },
+  "NED": {
+    "name": "Netherlands",
+    "code": "NED",
+    "flag": "🇳🇱",
+    "totalMedals": 490,
+    "summer": [
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 23,
+        "silver": 23,
+        "bronze": 19
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 22,
+        "silver": 21,
+        "bronze": 19
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 8,
+        "silver": 14,
+        "bronze": 14
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 11,
+        "silver": 13,
+        "bronze": 4
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 4,
+        "silver": 2,
+        "bronze": 19
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 50,
+        "silver": 44,
+        "bronze": 42
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 3
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      }
+    ]
+  },
+  "KOR": {
+    "name": "South Korea",
+    "code": "KOR",
+    "flag": "🇰🇷",
+    "totalMedals": 402,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 11,
+        "silver": 17,
+        "bronze": 18
+      },
+      {
+        "sport": "Archery",
+        "emoji": "🏹",
+        "gold": 27,
+        "silver": 9,
+        "bronze": 7
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 11,
+        "silver": 11,
+        "bronze": 14
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 12,
+        "silver": 3,
+        "bronze": 7
+      },
+      {
+        "sport": "Badminton",
+        "emoji": "🏸",
+        "gold": 6,
+        "silver": 7,
+        "bronze": 7
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 35,
+        "silver": 21,
+        "bronze": 13
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 11,
+        "silver": 11,
+        "bronze": 7
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "SUI": {
+    "name": "Switzerland",
+    "code": "SUI",
+    "flag": "🇨🇭",
+    "totalMedals": 402,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 15,
+        "silver": 19,
+        "bronze": 12
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 6,
+        "silver": 11,
+        "bronze": 8
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 7,
+        "silver": 8,
+        "bronze": 9
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 8,
+        "silver": 6,
+        "bronze": 10
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 6,
+        "silver": 10,
+        "bronze": 7
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 29,
+        "silver": 26,
+        "bronze": 27
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 10,
+        "silver": 10,
+        "bronze": 11
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 10,
+        "silver": 2,
+        "bronze": 9
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 9,
+        "silver": 3,
+        "bronze": 4
+      },
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 7,
+        "silver": 2,
+        "bronze": 4
+      }
+    ]
+  },
+  "AUT": {
+    "name": "Austria",
+    "code": "AUT",
+    "flag": "🇦🇹",
+    "totalMedals": 370,
+    "summer": [
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 3,
+        "silver": 5,
+        "bronze": 6
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 6,
+        "bronze": 4
+      },
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 7
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 3,
+        "silver": 4,
+        "bronze": 2
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 45,
+        "silver": 44,
+        "bronze": 46
+      },
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 9,
+        "silver": 11,
+        "bronze": 11
+      },
+      {
+        "sport": "Luge",
+        "emoji": "🛷",
+        "gold": 7,
+        "silver": 10,
+        "bronze": 11
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 7,
+        "silver": 9,
+        "bronze": 4
+      },
+      {
+        "sport": "Nordic Combined",
+        "emoji": "🎿",
+        "gold": 6,
+        "silver": 3,
+        "bronze": 11
+      }
+    ]
+  },
+  "POL": {
+    "name": "Poland",
+    "code": "POL",
+    "flag": "🇵🇱",
+    "totalMedals": 329,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 30,
+        "silver": 20,
+        "bronze": 17
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 8,
+        "silver": 9,
+        "bronze": 26
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 6,
+        "silver": 6,
+        "bronze": 22
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 5,
+        "silver": 9,
+        "bronze": 13
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 0,
+        "silver": 8,
+        "bronze": 14
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "ROU": {
+    "name": "Romania",
+    "code": "ROU",
+    "flag": "🇷🇴",
+    "totalMedals": 316,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 25,
+        "silver": 23,
+        "bronze": 25
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 20,
+        "silver": 12,
+        "bronze": 9
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 11,
+        "silver": 16,
+        "bronze": 11
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 10,
+        "silver": 10,
+        "bronze": 14
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 7,
+        "silver": 8,
+        "bronze": 19
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "CUB": {
+    "name": "Cuba",
+    "code": "CUB",
+    "flag": "🇨🇺",
+    "totalMedals": 242,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 43,
+        "silver": 19,
+        "bronze": 18
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 11,
+        "silver": 14,
+        "bronze": 20
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 7,
+        "silver": 15,
+        "bronze": 17
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 11,
+        "silver": 6,
+        "bronze": 10
+      },
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 5,
+        "silver": 3,
+        "bronze": 3
+      }
+    ],
+    "winter": []
+  },
+  "BUL": {
+    "name": "Bulgaria",
+    "code": "BUL",
+    "flag": "🇧🇬",
+    "totalMedals": 233,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 16,
+        "silver": 32,
+        "bronze": 23
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 13,
+        "silver": 17,
+        "bronze": 8
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 5,
+        "silver": 8,
+        "bronze": 7
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 5,
+        "silver": 5,
+        "bronze": 9
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 4,
+        "silver": 5,
+        "bronze": 8
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "DEN": {
+    "name": "Denmark",
+    "code": "DEN",
+    "flag": "🇩🇰",
+    "totalMedals": 210,
+    "summer": [
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 13,
+        "silver": 9,
+        "bronze": 9
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 8,
+        "silver": 11,
+        "bronze": 10
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 7,
+        "silver": 5,
+        "bronze": 13
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 7
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 3,
+        "silver": 10,
+        "bronze": 3
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Curling",
+        "emoji": "🥌",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "ESP": {
+    "name": "Spain",
+    "code": "ESP",
+    "flag": "🇪🇸",
+    "totalMedals": 185,
+    "summer": [
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 13,
+        "silver": 5,
+        "bronze": 3
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 5,
+        "silver": 10,
+        "bronze": 5
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 5,
+        "silver": 5,
+        "bronze": 6
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 5,
+        "bronze": 8
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 2,
+        "silver": 7,
+        "bronze": 4
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "BEL": {
+    "name": "Belgium",
+    "code": "BEL",
+    "flag": "🇧🇪",
+    "totalMedals": 180,
+    "summer": [
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 7,
+        "silver": 9,
+        "bronze": 12
+      },
+      {
+        "sport": "Archery",
+        "emoji": "🏹",
+        "gold": 11,
+        "silver": 6,
+        "bronze": 4
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 6,
+        "silver": 2,
+        "bronze": 8
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 10
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 6,
+        "silver": 5,
+        "bronze": 3
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "UKR": {
+    "name": "Ukraine",
+    "code": "UKR",
+    "flag": "🇺🇦",
+    "totalMedals": 179,
+    "summer": [
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 9,
+        "silver": 7,
+        "bronze": 9
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 14
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 4,
+        "silver": 6,
+        "bronze": 8
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 8,
+        "silver": 5,
+        "bronze": 3
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 7
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "BRA": {
+    "name": "Brazil",
+    "code": "BRA",
+    "flag": "🇧🇷",
+    "totalMedals": 159,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 17
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 11
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 5,
+        "silver": 4,
+        "bronze": 11
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 8,
+        "silver": 3,
+        "bronze": 8
+      },
+      {
+        "sport": "Beach Volleyball",
+        "emoji": "🏐",
+        "gold": 3,
+        "silver": 7,
+        "bronze": 3
+      }
+    ],
+    "winter": []
+  },
+  "NZL": {
+    "name": "New Zealand",
+    "code": "NZL",
+    "flag": "🇳🇿",
+    "totalMedals": 154,
+    "summer": [
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 14,
+        "silver": 5,
+        "bronze": 10
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 10,
+        "silver": 4,
+        "bronze": 13
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 9,
+        "silver": 8,
+        "bronze": 6
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 10,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 3,
+        "silver": 3,
+        "bronze": 6
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "GRE": {
+    "name": "Greece",
+    "code": "GRE",
+    "flag": "🇬🇷",
+    "totalMedals": 120,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 8,
+        "silver": 12,
+        "bronze": 10
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 5
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 5,
+        "silver": 5,
+        "bronze": 3
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 5,
+        "silver": 3,
+        "bronze": 4
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 7
+      }
+    ],
+    "winter": []
+  },
+  "CZE": {
+    "name": "Czech Republic",
+    "code": "CZE",
+    "flag": "🇨🇿",
+    "totalMedals": 119,
+    "summer": [
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 5,
+        "silver": 6,
+        "bronze": 7
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 5,
+        "silver": 3,
+        "bronze": 9
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 3,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 1,
+        "silver": 5,
+        "bronze": 3
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 3,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 3,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 3,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "KEN": {
+    "name": "Kenya",
+    "code": "KEN",
+    "flag": "🇰🇪",
+    "totalMedals": 114,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 34,
+        "silver": 41,
+        "bronze": 32
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 5
+      }
+    ],
+    "winter": []
+  },
+  "BLR": {
+    "name": "Belarus",
+    "code": "BLR",
+    "flag": "🇧🇾",
+    "totalMedals": 108,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 7
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 7,
+        "bronze": 7
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 7
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 4
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 4
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 4,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "TUR": {
+    "name": "Turkey",
+    "code": "TUR",
+    "flag": "🇹🇷",
+    "totalMedals": 105,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 29,
+        "silver": 18,
+        "bronze": 19
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 8,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 5
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Karate",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "RSA": {
+    "name": "South Africa",
+    "code": "RSA",
+    "flag": "🇿🇦",
+    "totalMedals": 98,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 9,
+        "silver": 13,
+        "bronze": 6
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 8,
+        "silver": 10,
+        "bronze": 8
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 6,
+        "silver": 4,
+        "bronze": 9
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 1,
+        "silver": 6,
+        "bronze": 4
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "JAM": {
+    "name": "Jamaica",
+    "code": "JAM",
+    "flag": "🇯🇲",
+    "totalMedals": 88,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 27,
+        "silver": 35,
+        "bronze": 25
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "KAZ": {
+    "name": "Kazakhstan",
+    "code": "KAZ",
+    "flag": "🇰🇿",
+    "totalMedals": 86,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 8,
+        "silver": 7,
+        "bronze": 10
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 1,
+        "silver": 5,
+        "bronze": 11
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 7
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 2
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "ARG": {
+    "name": "Argentina",
+    "code": "ARG",
+    "flag": "🇦🇷",
+    "totalMedals": 81,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 7,
+        "silver": 7,
+        "bronze": 10
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 5
+      },
+      {
+        "sport": "Field Hockey",
+        "emoji": "🏑",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 2
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 3,
+        "bronze": 0
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 3
+      }
+    ],
+    "winter": []
+  },
+  "MEX": {
+    "name": "Mexico",
+    "code": "MEX",
+    "flag": "🇲🇽",
+    "totalMedals": 79,
+    "summer": [
+      {
+        "sport": "Diving",
+        "emoji": "🤿",
+        "gold": 2,
+        "silver": 8,
+        "bronze": 10
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 8
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 2
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 5
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 3
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "IRI": {
+    "name": "Iran",
+    "code": "IRI",
+    "flag": "🇮🇷",
+    "totalMedals": 76,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 11,
+        "silver": 15,
+        "bronze": 20
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 9,
+        "silver": 6,
+        "bronze": 5
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Karate",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "SLO": {
+    "name": "Slovenia",
+    "code": "SLO",
+    "flag": "🇸🇮",
+    "totalMedals": 64,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 2,
+        "silver": 5,
+        "bronze": 4
+      },
+      {
+        "sport": "Ski Jumping",
+        "emoji": "🎿",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 4
+      },
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ]
+  },
+  "ETH": {
+    "name": "Ethiopia",
+    "code": "ETH",
+    "flag": "🇪🇹",
+    "totalMedals": 59,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 24,
+        "silver": 12,
+        "bronze": 23
+      }
+    ],
+    "winter": []
+  },
+  "PRK": {
+    "name": "North Korea",
+    "code": "PRK",
+    "flag": "🇰🇵",
+    "totalMedals": 58,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 5,
+        "silver": 8,
+        "bronze": 6
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 3,
+        "silver": 2,
+        "bronze": 5
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Table Tennis",
+        "emoji": "🏓",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "CRO": {
+    "name": "Croatia",
+    "code": "CRO",
+    "flag": "🇭🇷",
+    "totalMedals": 54,
+    "summer": [
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 4
+      },
+      {
+        "sport": "Handball",
+        "emoji": "🤾",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 4,
+        "silver": 6,
+        "bronze": 0
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "AZE": {
+    "name": "Azerbaijan",
+    "code": "AZE",
+    "flag": "🇦🇿",
+    "totalMedals": 53,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 4,
+        "silver": 8,
+        "bronze": 13
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 8
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "EST": {
+    "name": "Estonia",
+    "code": "EST",
+    "flag": "🇪🇪",
+    "totalMedals": 50,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 5,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 4
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Cross Country Skiing",
+        "emoji": "🎿",
+        "gold": 4,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "SVK": {
+    "name": "Slovakia",
+    "code": "SVK",
+    "flag": "🇸🇰",
+    "totalMedals": 50,
+    "summer": [
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 8,
+        "silver": 8,
+        "bronze": 5
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Biathlon",
+        "emoji": "🎿",
+        "gold": 3,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Snowboarding",
+        "emoji": "🏂",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "LAT": {
+    "name": "Latvia",
+    "code": "LAT",
+    "flag": "🇱🇻",
+    "totalMedals": 43,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 4,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Luge",
+        "emoji": "🛷",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 7
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Skeleton",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 0
+      },
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      }
+    ]
+  },
+  "GEO": {
+    "name": "Georgia",
+    "code": "GEO",
+    "flag": "🇬🇪",
+    "totalMedals": 42,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 3,
+        "silver": 6,
+        "bronze": 10
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 4,
+        "silver": 5,
+        "bronze": 3
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Figure Skating",
+        "emoji": "⛸️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "EGY": {
+    "name": "Egypt",
+    "code": "EGY",
+    "flag": "🇪🇬",
+    "totalMedals": 41,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 6,
+        "silver": 3,
+        "bronze": 6
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Diving",
+        "emoji": "🤿",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      }
+    ],
+    "winter": []
+  },
+  "THA": {
+    "name": "Thailand",
+    "code": "THA",
+    "flag": "🇹🇭",
+    "totalMedals": 40,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 5,
+        "silver": 4,
+        "bronze": 7
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 4,
+        "silver": 4,
+        "bronze": 7
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Badminton",
+        "emoji": "🏸",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "IND": {
+    "name": "India",
+    "code": "IND",
+    "flag": "🇮🇳",
+    "totalMedals": 38,
+    "summer": [
+      {
+        "sport": "Field Hockey",
+        "emoji": "🏑",
+        "gold": 8,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 5
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 4
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "COL": {
+    "name": "Colombia",
+    "code": "COL",
+    "flag": "🇨🇴",
+    "totalMedals": 38,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 3,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "INA": {
+    "name": "Indonesia",
+    "code": "INA",
+    "flag": "🇮🇩",
+    "totalMedals": 37,
+    "summer": [
+      {
+        "sport": "Badminton",
+        "emoji": "🏸",
+        "gold": 8,
+        "silver": 6,
+        "bronze": 6
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 7,
+        "bronze": 9
+      },
+      {
+        "sport": "Archery",
+        "emoji": "🏹",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "TPE": {
+    "name": "Taiwan",
+    "code": "TPE",
+    "flag": "🇹🇼",
+    "totalMedals": 37,
+    "summer": [
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 6
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 3
+      },
+      {
+        "sport": "Archery",
+        "emoji": "🏹",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Table Tennis",
+        "emoji": "🏓",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Short Track Speed Skating",
+        "emoji": "⛸️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "UZB": {
+    "name": "Uzbekistan",
+    "code": "UZB",
+    "flag": "🇺🇿",
+    "totalMedals": 37,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 6,
+        "silver": 2,
+        "bronze": 8
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 5
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Freestyle Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "IRL": {
+    "name": "Ireland",
+    "code": "IRL",
+    "flag": "🇮🇪",
+    "totalMedals": 35,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 3,
+        "silver": 5,
+        "bronze": 10
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 3,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "LTU": {
+    "name": "Lithuania",
+    "code": "LTU",
+    "flag": "🇱🇹",
+    "totalMedals": 31,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Modern Pentathlon",
+        "emoji": "🏅",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Basketball",
+        "emoji": "🏀",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 3,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "MGL": {
+    "name": "Mongolia",
+    "code": "MGL",
+    "flag": "🇲🇳",
+    "totalMedals": 30,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 4,
+        "bronze": 6
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 4,
+        "bronze": 6
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 4
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "NGR": {
+    "name": "Nigeria",
+    "code": "NGR",
+    "flag": "🇳🇬",
+    "totalMedals": 29,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 6,
+        "bronze": 8
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Football",
+        "emoji": "⚽",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "POR": {
+    "name": "Portugal",
+    "code": "POR",
+    "flag": "🇵🇹",
+    "totalMedals": 28,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 4
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SRB": {
+    "name": "Serbia",
+    "code": "SRB",
+    "flag": "🇷🇸",
+    "totalMedals": 28,
+    "summer": [
+      {
+        "sport": "Water Polo",
+        "emoji": "🤽",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Basketball",
+        "emoji": "🏀",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ]
+  },
+  "MAR": {
+    "name": "Morocco",
+    "code": "MAR",
+    "flag": "🇲🇦",
+    "totalMedals": 26,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 7,
+        "silver": 5,
+        "bronze": 9
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 4
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "VEN": {
+    "name": "Venezuela",
+    "code": "VEN",
+    "flag": "🇻🇪",
+    "totalMedals": 25,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "TTO": {
+    "name": "Trinidad and Tobago",
+    "code": "TTO",
+    "flag": "🇹🇹",
+    "totalMedals": 21,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 3,
+        "silver": 4,
+        "bronze": 8
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "ARM": {
+    "name": "Armenia",
+    "code": "ARM",
+    "flag": "🇦🇲",
+    "totalMedals": 21,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 3
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 5,
+        "bronze": 2
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Gymnastics",
+        "emoji": "🤸",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "BAH": {
+    "name": "Bahamas",
+    "code": "BAH",
+    "flag": "🇧🇸",
+    "totalMedals": 19,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 8,
+        "silver": 3,
+        "bronze": 5
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "ALG": {
+    "name": "Algeria",
+    "code": "ALG",
+    "flag": "🇩🇿",
+    "totalMedals": 17,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 2
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 5
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "HKG": {
+    "name": "Hong Kong",
+    "code": "HKG",
+    "flag": "🇭🇰",
+    "totalMedals": 16,
+    "summer": [
+      {
+        "sport": "Table Tennis",
+        "emoji": "🏓",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 2
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 4,
+        "bronze": 0
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "MAS": {
+    "name": "Malaysia",
+    "code": "MAS",
+    "flag": "🇲🇾",
+    "totalMedals": 15,
+    "summer": [
+      {
+        "sport": "Badminton",
+        "emoji": "🏸",
+        "gold": 0,
+        "silver": 6,
+        "bronze": 3
+      },
+      {
+        "sport": "Diving",
+        "emoji": "🤿",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "ISR": {
+    "name": "Israel",
+    "code": "ISR",
+    "flag": "🇮🇱",
+    "totalMedals": 15,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 5
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      }
+    ]
+  },
+  "DOM": {
+    "name": "Dominican Republic",
+    "code": "DOM",
+    "flag": "🇩🇴",
+    "totalMedals": 14,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 3,
+        "bronze": 0
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Baseball",
+        "emoji": "⚾",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "PHI": {
+    "name": "Philippines",
+    "code": "PHI",
+    "flag": "🇵🇭",
+    "totalMedals": 14,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 4,
+        "bronze": 4
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "CHI": {
+    "name": "Chile",
+    "code": "CHI",
+    "flag": "🇨🇱",
+    "totalMedals": 13,
+    "summer": [
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "TUN": {
+    "name": "Tunisia",
+    "code": "TUN",
+    "flag": "🇹🇳",
+    "totalMedals": 13,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 1
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Fencing",
+        "emoji": "🤺",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "PAK": {
+    "name": "Pakistan",
+    "code": "PAK",
+    "flag": "🇵🇰",
+    "totalMedals": 11,
+    "summer": [
+      {
+        "sport": "Field Hockey",
+        "emoji": "🏑",
+        "gold": 3,
+        "silver": 4,
+        "bronze": 2
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "UGA": {
+    "name": "Uganda",
+    "code": "UGA",
+    "flag": "🇺🇬",
+    "totalMedals": 11,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 4,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "LIE": {
+    "name": "Liechtenstein",
+    "code": "LIE",
+    "flag": "🇱🇮",
+    "totalMedals": 11,
+    "summer": [],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 2,
+        "silver": 2,
+        "bronze": 6
+      },
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "URU": {
+    "name": "Uruguay",
+    "code": "URU",
+    "flag": "🇺🇾",
+    "totalMedals": 10,
+    "summer": [
+      {
+        "sport": "Rowing",
+        "emoji": "🚣",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Basketball",
+        "emoji": "🏀",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Football",
+        "emoji": "⚽",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "PUR": {
+    "name": "Puerto Rico",
+    "code": "PUR",
+    "flag": "🇵🇷",
+    "totalMedals": 10,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 5
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "QAT": {
+    "name": "Qatar",
+    "code": "QAT",
+    "flag": "🇶🇦",
+    "totalMedals": 9,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 3,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Beach Volleyball",
+        "emoji": "🏐",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "ZIM": {
+    "name": "Zimbabwe",
+    "code": "ZIM",
+    "flag": "🇿🇼",
+    "totalMedals": 8,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 2,
+        "silver": 4,
+        "bronze": 1
+      },
+      {
+        "sport": "Field Hockey",
+        "emoji": "🏑",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "KGZ": {
+    "name": "Kyrgyzstan",
+    "code": "KGZ",
+    "flag": "🇰🇬",
+    "totalMedals": 8,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 3
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "VIE": {
+    "name": "Vietnam",
+    "code": "VIE",
+    "flag": "🇻🇳",
+    "totalMedals": 8,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Badminton",
+        "emoji": "🏸",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "MDA": {
+    "name": "Moldova",
+    "code": "MDA",
+    "flag": "🇲🇩",
+    "totalMedals": 7,
+    "summer": [
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "CMR": {
+    "name": "Cameroon",
+    "code": "CMR",
+    "flag": "🇨🇲",
+    "totalMedals": 6,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Football",
+        "emoji": "⚽",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SGP": {
+    "name": "Singapore",
+    "code": "SGP",
+    "flag": "🇸🇬",
+    "totalMedals": 6,
+    "summer": [
+      {
+        "sport": "Table Tennis",
+        "emoji": "🏓",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "BRN": {
+    "name": "Bahrain",
+    "code": "BRN",
+    "flag": "🇧🇭",
+    "totalMedals": 6,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 2,
+        "silver": 3,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "GHA": {
+    "name": "Ghana",
+    "code": "GHA",
+    "flag": "🇬🇭",
+    "totalMedals": 5,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 3
+      },
+      {
+        "sport": "Football",
+        "emoji": "⚽",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "LUX": {
+    "name": "Luxembourg",
+    "code": "LUX",
+    "flag": "🇱🇺",
+    "totalMedals": 5,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Ice Hockey",
+        "emoji": "🏒",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ]
+  },
+  "ECU": {
+    "name": "Ecuador",
+    "code": "ECU",
+    "flag": "🇪🇨",
+    "totalMedals": 5,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Cycling",
+        "emoji": "🚴",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "NAM": {
+    "name": "Namibia",
+    "code": "NAM",
+    "flag": "🇳🇦",
+    "totalMedals": 5,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 5,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "KSA": {
+    "name": "Saudi Arabia",
+    "code": "KSA",
+    "flag": "🇸🇦",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Equestrian",
+        "emoji": "🐎",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Karate",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "ISL": {
+    "name": "Iceland",
+    "code": "ISL",
+    "flag": "🇮🇸",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Handball",
+        "emoji": "🤾",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "PER": {
+    "name": "Peru",
+    "code": "PER",
+    "flag": "🇵🇪",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      },
+      {
+        "sport": "Volleyball",
+        "emoji": "🏐",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "CRC": {
+    "name": "Costa Rica",
+    "code": "CRC",
+    "flag": "🇨🇷",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "LBN": {
+    "name": "Lebanon",
+    "code": "LBN",
+    "flag": "🇱🇧",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 2
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "SYR": {
+    "name": "Syria",
+    "code": "SYR",
+    "flag": "🇸🇾",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "CIV": {
+    "name": "Ivory Coast",
+    "code": "CIV",
+    "flag": "🇨🇮",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "TJK": {
+    "name": "Tajikistan",
+    "code": "TJK",
+    "flag": "🇹🇯",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "BOT": {
+    "name": "Botswana",
+    "code": "BOT",
+    "flag": "🇧🇼",
+    "totalMedals": 4,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 3,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "KUW": {
+    "name": "Kuwait",
+    "code": "KUW",
+    "flag": "🇰🇼",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 3
+      }
+    ],
+    "winter": []
+  },
+  "PAN": {
+    "name": "Panama",
+    "code": "PAN",
+    "flag": "🇵🇦",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "GRN": {
+    "name": "Grenada",
+    "code": "GRN",
+    "flag": "🇬🇩",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SMR": {
+    "name": "San Marino",
+    "code": "SMR",
+    "flag": "🇸🇲",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "KOS": {
+    "name": "Kosovo",
+    "code": "KOS",
+    "flag": "🇽🇰",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 3,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "FIJ": {
+    "name": "Fiji",
+    "code": "FIJ",
+    "flag": "🇫🇯",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Rugby",
+        "emoji": "🏉",
+        "gold": 2,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "JOR": {
+    "name": "Jordan",
+    "code": "JOR",
+    "flag": "🇯🇴",
+    "totalMedals": 3,
+    "summer": [
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      {
+        "sport": "Karate",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "UAR": {
+    "name": "Syria",
+    "code": "UAR",
+    "flag": "🇸🇾",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "NIG": {
+    "name": "Niger",
+    "code": "NIG",
+    "flag": "🇳🇪",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "BER": {
+    "name": "Bermuda",
+    "code": "BER",
+    "flag": "🇧🇲",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Triathlon",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "ZAM": {
+    "name": "Zambia",
+    "code": "ZAM",
+    "flag": "🇿🇲",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "HAI": {
+    "name": "Haiti",
+    "code": "HAI",
+    "flag": "🇭🇹",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "SUR": {
+    "name": "Suriname",
+    "code": "SUR",
+    "flag": "🇸🇷",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "MKD": {
+    "name": "North Macedonia",
+    "code": "MKD",
+    "flag": "🇲🇰",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Wrestling",
+        "emoji": "🤼",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "BDI": {
+    "name": "Burundi",
+    "code": "BDI",
+    "flag": "🇧🇮",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "DJI": {
+    "name": "Djibouti",
+    "code": "DJI",
+    "flag": "🇩🇯",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "MOZ": {
+    "name": "Mozambique",
+    "code": "MOZ",
+    "flag": "🇲🇿",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SRI": {
+    "name": "Sri Lanka",
+    "code": "SRI",
+    "flag": "🇱🇰",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "TAN": {
+    "name": "Tanzania",
+    "code": "TAN",
+    "flag": "🇹🇿",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 2,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "UAE": {
+    "name": "United Arab Emirates",
+    "code": "UAE",
+    "flag": "🇦🇪",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Shooting",
+        "emoji": "🎯",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      {
+        "sport": "Judo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "ERI": {
+    "name": "Eritrea",
+    "code": "ERI",
+    "flag": "🇪🇷",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "AFG": {
+    "name": "Afghanistan",
+    "code": "AFG",
+    "flag": "🇦🇫",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      }
+    ],
+    "winter": []
+  },
+  "TKM": {
+    "name": "Turkmenistan",
+    "code": "TKM",
+    "flag": "🇹🇲",
+    "totalMedals": 2,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "GUY": {
+    "name": "Guyana",
+    "code": "GUY",
+    "flag": "🇬🇾",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "TGA": {
+    "name": "Tonga",
+    "code": "TGA",
+    "flag": "🇹🇴",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "PAR": {
+    "name": "Paraguay",
+    "code": "PAR",
+    "flag": "🇵🇾",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Football",
+        "emoji": "⚽",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "IRQ": {
+    "name": "Iraq",
+    "code": "IRQ",
+    "flag": "🇮🇶",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "AHO": {
+    "name": "Curacao",
+    "code": "AHO",
+    "flag": "🇨🇼",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "ISV": {
+    "name": "US Virgin Islands",
+    "code": "ISV",
+    "flag": "🇻🇮",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "BAR": {
+    "name": "Barbados",
+    "code": "BAR",
+    "flag": "🇧🇧",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SEN": {
+    "name": "Senegal",
+    "code": "SEN",
+    "flag": "🇸🇳",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "TOG": {
+    "name": "Togo",
+    "code": "TOG",
+    "flag": "🇹🇬",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Canoeing",
+        "emoji": "🛶",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SUD": {
+    "name": "Sudan",
+    "code": "SUD",
+    "flag": "🇸🇩",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "MRI": {
+    "name": "Mauritius",
+    "code": "MRI",
+    "flag": "🇲🇺",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Boxing",
+        "emoji": "🥊",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "SAM": {
+    "name": "Samoa",
+    "code": "SAM",
+    "flag": "🇼🇸",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Weightlifting",
+        "emoji": "🏋️",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "CYP": {
+    "name": "Cyprus",
+    "code": "CYP",
+    "flag": "🇨🇾",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Sailing",
+        "emoji": "⛵",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "GAB": {
+    "name": "Gabon",
+    "code": "GAB",
+    "flag": "🇬🇦",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Taekwondo",
+        "emoji": "🥋",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "MNE": {
+    "name": "Montenegro",
+    "code": "MNE",
+    "flag": "🇲🇪",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Handball",
+        "emoji": "🤾",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "GUA": {
+    "name": "Guatemala",
+    "code": "GUA",
+    "flag": "🇬🇹",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "AND": {
+    "name": "Andorra",
+    "code": "AND",
+    "flag": "🇦🇩",
+    "totalMedals": 1,
+    "summer": [],
+    "winter": [
+      {
+        "sport": "Alpine Skiing",
+        "emoji": "⛷️",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  },
+  "BIH": {
+    "name": "Bosnia and Herzegovina",
+    "code": "BIH",
+    "flag": "🇧🇦",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Tennis",
+        "emoji": "🎾",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "BUR": {
+    "name": "Burkina Faso",
+    "code": "BUR",
+    "flag": "🇧🇫",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Athletics",
+        "emoji": "🏃",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ],
+    "winter": []
+  },
+  "ESA": {
+    "name": "El Salvador",
+    "code": "ESA",
+    "flag": "🇸🇻",
+    "totalMedals": 1,
+    "summer": [
+      {
+        "sport": "Swimming",
+        "emoji": "🏊",
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      }
+    ],
+    "winter": []
+  },
+  "MON": {
+    "name": "Monaco",
+    "code": "MON",
+    "flag": "🇲🇨",
+    "totalMedals": 1,
+    "summer": [],
+    "winter": [
+      {
+        "sport": "Bobsleigh",
+        "emoji": "🛷",
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      }
+    ]
+  }
+}
