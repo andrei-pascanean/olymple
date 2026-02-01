@@ -63,6 +63,12 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add a streak counter for consecutive days played
 - [ ] Hard mode: show fewer sports or hide gold/silver/bronze breakdown
 - [ ] Hint system: reveal the continent or first letter after N wrong guesses
+- [ ] Add a “Why This Country?” Reveal at the End with an interesting fact about it's olympic performance
+- [ ] Animate each guess sliding in (micro-reward)
+- [ ] Add a guess counter
+- [ ] Add difficulty game modes
+- [ ] Hover tooltips explaining % accuracy
+- [ ] Confetti only on first-try win
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in

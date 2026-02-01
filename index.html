@@ -235,6 +235,77 @@
                 "U.S. Minor Outlying Islands": "US Outlying Islands"
             };
 
+            function launchConfetti() {
+                const canvas = document.createElement('canvas');
+                canvas.style.position = 'fixed';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                canvas.style.pointerEvents = 'none';
+                canvas.style.zIndex = '9999';
+                document.body.appendChild(canvas);
+
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F', '#BB8FCE'];
+                const pieces = [];
+
+                for (let i = 0; i < 200; i++) {
+                    pieces.push({
+                        x: canvas.width / 2,
+                        y: canvas.height / 2,
+                        vx: (Math.random() - 0.5) * 20,
+                        vy: (Math.random() - 1) * 18,
+                        w: Math.random() * 10 + 5,
+                        h: Math.random() * 6 + 3,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        rotation: Math.random() * 360,
+                        rotationSpeed: (Math.random() - 0.5) * 15,
+                        gravity: 0.3 + Math.random() * 0.2,
+                        opacity: 1
+                    });
+                }
+
+                let frame = 0;
+                const totalFrames = 180;
+
+                function animate() {
+                    frame++;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    pieces.forEach(p => {
+                        p.x += p.vx;
+                        p.vy += p.gravity;
+                        p.y += p.vy;
+                        p.vx *= 0.99;
+                        p.rotation += p.rotationSpeed;
+
+                        if (frame > totalFrames - 60) {
+                            p.opacity = Math.max(0, p.opacity - 0.02);
+                        }
+
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.globalAlpha = p.opacity;
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                        ctx.restore();
+                    });
+
+                    if (frame < totalFrames) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        canvas.remove();
+                    }
+                }
+
+                animate();
+            }
+
             function renderTable(tbodyId, sports) {
                 const tbody = document.getElementById(tbodyId);
                 tbody.innerHTML = '';
@@ -516,6 +587,10 @@
                             el.style.color = '#000';
                             el.style.fontWeight = 'bold';
                         });
+
+                        if (guesses === 1) {
+                            launchConfetti();
+                        }
                     }
 
                     if ((guesses == 5) || (distance == 0)) {
