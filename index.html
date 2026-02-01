@@ -112,18 +112,50 @@
                 </div>
             </div>
         </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="settingsOffcanvas"
+            aria-labelledby="settingsOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="settingsOffcanvasLabel">Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mb-3">
+                    <h6>Game Mode</h6>
+                    <p class="text-muted small">Filter the daily puzzle to countries with specific medal types.</p>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="summerModeToggle">
+                    <label class="form-check-label" for="summerModeToggle">☀️ Summer Mode</label>
+                    <div class="form-text">Only countries with summer medals</div>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="winterModeToggle">
+                    <label class="form-check-label" for="winterModeToggle">❄️ Winter Mode</label>
+                    <div class="form-text">Only countries with winter medals</div>
+                </div>
+                <hr>
+                <p class="text-muted small mb-0">Note: Changing modes will start a new puzzle for today.</p>
+            </div>
+        </div>
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
-                <h1>
+                <h1 class="d-flex align-items-center justify-content-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5; vertical-align: middle;"
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;"
                         data-bs-toggle="modal" data-bs-target="#howToPlayModal"
                         onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                         <path
                             d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                     </svg>
-                    Daily Olymple
+                    <span class="mx-2" id="gameTitle">Daily Olymple</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;"
+                        data-bs-toggle="offcanvas" data-bs-target="#settingsOffcanvas"
+                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
                 </h1>
             </div>
         </div>
@@ -256,6 +288,14 @@
             const EPOCH = new Date('2025-01-01');
             const today = new Date();
             const gameId = Math.floor((today - EPOCH) / (1000 * 60 * 60 * 24)) + 1;
+
+            function getGameMode() {
+                return localStorage.getItem('olympleGameMode') || 'default';
+            }
+
+            function setGameMode(mode) {
+                localStorage.setItem('olympleGameMode', mode);
+            }
 
             // Name overrides: medal JSON name -> centroid JSON name
             const CENTROID_NAME_MAP = {
@@ -448,12 +488,25 @@
                 });
 
                 // Medal countries used for daily puzzle selection
-                const medalCountries = Object.keys(country_data).filter(k => country_data[k].noc);
+                const gameMode = getGameMode();
+                let medalCountries = Object.keys(country_data).filter(k => country_data[k].noc);
+
+                if (gameMode === 'summer') {
+                    medalCountries = medalCountries.filter(k => {
+                        return medalData[country_data[k].noc].summer.length > 0;
+                    });
+                } else if (gameMode === 'winter') {
+                    medalCountries = medalCountries.filter(k => {
+                        return medalData[country_data[k].noc].winter.length > 0;
+                    });
+                }
+
                 const countries = Object.keys(country_data).sort((a, b) => a.localeCompare(b));
 
-                // Pick daily country using date-based seed (only from medal countries)
+                // Pick daily country using date-based seed (mode included for unique puzzles per mode)
                 const dateStr = getDateString();
-                const hash = hashString(dateStr);
+                const seedStr = gameMode !== 'default' ? dateStr + '-' + gameMode : dateStr;
+                const hash = hashString(seedStr);
                 const dailyIndex = hash % medalCountries.length;
                 const correct_country = medalCountries[dailyIndex];
                 const correctNoc = country_data[correct_country].noc;
@@ -543,8 +596,9 @@
                 }
 
                 function shareButtonCopyClipboard(button) {
+                    const modeSuffix = gameMode === 'summer' ? ' ☀️' : gameMode === 'winter' ? ' ❄️' : '';
                     const clipBoardText = [
-                        `#Daily Olymple #${gameId} ${guesses}/5`,
+                        `#DailyOlymple${modeSuffix} #${gameId} ${guesses}/5`,
                         performances.join("\n"),
                         "https://olymple.vercel.app"
                     ].join("\n");
@@ -740,6 +794,44 @@
             }
 
             init();
+
+            // --- Settings toggle logic ---
+            (function () {
+                const summerToggle = document.getElementById('summerModeToggle');
+                const winterToggle = document.getElementById('winterModeToggle');
+                const currentMode = getGameMode();
+
+                // Set initial toggle state from localStorage
+                summerToggle.checked = currentMode === 'summer';
+                winterToggle.checked = currentMode === 'winter';
+
+                // Update title with mode indicator
+                const titleEl = document.getElementById('gameTitle');
+                if (currentMode === 'summer') {
+                    titleEl.textContent = 'Daily Olymple ☀️';
+                } else if (currentMode === 'winter') {
+                    titleEl.textContent = 'Daily Olymple ❄️';
+                }
+
+                // Mutual exclusion: toggling one off = default, toggling one on = that mode
+                summerToggle.addEventListener('change', function () {
+                    if (this.checked) {
+                        setGameMode('summer');
+                    } else {
+                        setGameMode('default');
+                    }
+                    location.reload();
+                });
+
+                winterToggle.addEventListener('change', function () {
+                    if (this.checked) {
+                        setGameMode('winter');
+                    } else {
+                        setGameMode('default');
+                    }
+                    location.reload();
+                });
+            })();
         </script>
 </body>
 
