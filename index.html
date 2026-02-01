@@ -47,9 +47,82 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="howToPlayModal" tabindex="-1" aria-labelledby="howToPlayModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="howToPlayModalLabel">How to Play</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>A new mystery country is revealed every day through its <strong>Olympic medal
+                                history</strong>. You get <strong>5 guesses</strong> to figure out which country it
+                            is.</p>
+                        <p>You'll see the country's <strong>total medal count</strong> and its <strong>top 5 summer and
+                                winter sports</strong> with gold, silver, and bronze breakdowns.</p>
+                        <hr>
+                        <h6>After each guess, you'll see:</h6>
+                        <table class="table table-sm mt-2 mb-3">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Country</th>
+                                    <th class="text-center">Distance</th>
+                                    <th class="text-center">Direction</th>
+                                    <th class="text-center">Accuracy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">🇧🇷 Brazil</td>
+                                    <td class="text-center">7,725km</td>
+                                    <td class="text-center">↗️</td>
+                                    <td class="text-center">61%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">🇪🇸 Spain</td>
+                                    <td class="text-center">1,053km</td>
+                                    <td class="text-center">↗️</td>
+                                    <td class="text-center">95%</td>
+                                </tr>
+                                <tr style="background-color: #FFD700;">
+                                    <td class="text-center fw-bold">🇫🇷 France</td>
+                                    <td class="text-center fw-bold">0km</td>
+                                    <td class="text-center fw-bold">🎉</td>
+                                    <td class="text-center fw-bold">100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="mb-3">
+                            <li><strong>Distance</strong> — how far your guess is from the correct country (in km)</li>
+                            <li><strong>Direction</strong> — an arrow pointing toward the correct country</li>
+                            <li><strong>Accuracy</strong> — how close you are as a percentage</li>
+                        </ul>
+                        <hr>
+                        <h6>How accuracy works</h6>
+                        <p class="mb-1">The maximum possible distance between two points on Earth is ~20,000km. Your
+                            accuracy percentage is calculated as:</p>
+                        <p class="text-center"><code>accuracy = 100 - (distance / 20,000) × 100</code></p>
+                        <p class="mb-0">So <strong>1,000km away = 95%</strong>, <strong>10,000km away = 50%</strong>,
+                            and <strong>0km = 100%</strong>.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
                 <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5; vertical-align: middle;"
+                        data-bs-toggle="modal" data-bs-target="#howToPlayModal"
+                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                        <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
                     Daily Olymple
                 </h1>
             </div>
