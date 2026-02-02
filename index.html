@@ -8,6 +8,24 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+    <style>
+        @keyframes guess-flip {
+            0%   { transform: rotateX(90deg); opacity: 0; }
+            50%  { opacity: 1; }
+            100% { transform: rotateX(0deg); opacity: 1; }
+        }
+        .guess-cell {
+            perspective: 600px;
+        }
+        .guess-cell .form-control {
+            transform: rotateX(90deg);
+            opacity: 0;
+            font-weight: bold;
+        }
+        .guess-cell.reveal .form-control {
+            animation: guess-flip 0.5s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body>
@@ -673,80 +691,61 @@
                     const guessResultDiv = document.getElementById(`guess_${guesses}`);
                     guessResultDiv.innerHTML = "";
 
-                    const result_country = document.createElement("div");
-                    result_country.classList.add("col-5");
+                    const FLIP_DELAY = 350; // ms between each cell
+                    const FLIP_DURATION = 500; // ms per flip
 
-                    const countryInput = document.createElement("input");
-                    countryInput.classList.add("form-control", "text-center");
-                    countryInput.type = "text";
-                    countryInput.setAttribute("aria-label", "");
-                    countryInput.setAttribute("value", input.value);
-                    countryInput.disabled = true;
-                    countryInput.readOnly = true;
+                    function createGuessCell(colClass, value) {
+                        const col = document.createElement("div");
+                        col.classList.add(colClass, "guess-cell");
 
-                    result_country.appendChild(countryInput);
-                    guessResultDiv.appendChild(result_country);
+                        const inp = document.createElement("input");
+                        inp.classList.add("form-control", "text-center");
+                        inp.type = "text";
+                        inp.setAttribute("aria-label", "");
+                        inp.setAttribute("value", value);
+                        inp.disabled = true;
+                        inp.readOnly = true;
 
-                    const result_distance = document.createElement("div");
-                    result_distance.classList.add("col-3");
+                        col.appendChild(inp);
+                        return { col, inp };
+                    }
 
-                    const distanceInput = document.createElement("input");
-                    distanceInput.classList.add("form-control", "text-center");
-                    distanceInput.type = "text";
-                    distanceInput.setAttribute("aria-label", "");
-                    distanceInput.setAttribute("value", distance + "km");
-                    distanceInput.disabled = true;
-                    distanceInput.readOnly = true;
+                    const countryCell = createGuessCell("col-5", input.value);
+                    const distCell = createGuessCell("col-3", distance + "km");
+                    const headCell = createGuessCell("col-2", heading);
+                    const proxCell = createGuessCell("col-2", prox + "%");
 
-                    result_distance.appendChild(distanceInput);
-                    guessResultDiv.appendChild(result_distance);
+                    const cells = [countryCell, distCell, headCell, proxCell];
 
-                    const result_heading = document.createElement("div");
-                    result_heading.classList.add("col-2");
-
-                    const headingInput = document.createElement("input");
-                    headingInput.classList.add("form-control", "text-center");
-                    headingInput.type = "text";
-                    headingInput.setAttribute("aria-label", "");
-                    headingInput.setAttribute("value", heading);
-                    headingInput.disabled = true;
-                    headingInput.readOnly = true;
-
-                    result_heading.appendChild(headingInput);
-                    guessResultDiv.appendChild(result_heading);
+                    cells.forEach(c => guessResultDiv.appendChild(c.col));
 
                     document.getElementById("searchCountries").value = "";
 
-                    const result_prox = document.createElement("div");
-                    result_prox.classList.add("col-2");
+                    // Staggered flip reveal
+                    cells.forEach((c, i) => {
+                        c.inp.style.animationDelay = (i * FLIP_DELAY) + 'ms';
+                        c.col.classList.add('reveal');
+                    });
 
-                    const proxInput = document.createElement("input");
-                    proxInput.classList.add("form-control", "text-center");
-                    proxInput.type = "text";
-                    proxInput.setAttribute("aria-label", "");
-                    proxInput.setAttribute("value", prox + "%");
-                    proxInput.disabled = true;
-                    proxInput.readOnly = true;
-
-                    result_prox.appendChild(proxInput);
-                    guessResultDiv.appendChild(result_prox);
+                    const totalAnimTime = (cells.length - 1) * FLIP_DELAY + FLIP_DURATION;
 
                     if (distance == 0) {
-                        [countryInput, distanceInput, headingInput, proxInput].forEach(el => {
-                            el.style.backgroundColor = '#FFD700';
-                            el.style.borderColor = '#FFD700';
-                            el.style.color = '#000';
-                            el.style.fontWeight = 'bold';
-                        });
-
-                        if (guesses === 1) {
-                            launchConfetti();
-                        }
+                        setTimeout(() => {
+                            cells.forEach(c => {
+                                c.inp.style.backgroundColor = '#FFD700';
+                                c.inp.style.borderColor = '#FFD700';
+                                c.inp.style.color = '#000';
+                            });
+                            if (guesses === 1) {
+                                launchConfetti();
+                            }
+                        }, totalAnimTime);
                     }
 
                     if ((guesses == 5) || (distance == 0)) {
                         document.getElementById("guess-button").disabled = true;
 
+                        setTimeout(() => {
                         const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
                         const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
                         correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
@@ -804,7 +803,8 @@
                         document.getElementById("globalShareButton").addEventListener('click', function () {
                             shareButtonCopyClipboard(this)
                         })
-                    };
+                        }, totalAnimTime);
+                    }
                 }
 
                 document.getElementById("guess-button").onclick = handleGuess;
