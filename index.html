@@ -556,7 +556,7 @@
                     });
                 }
 
-                const countries = Object.keys(country_data).sort((a, b) => a.localeCompare(b));
+                const countries = Object.keys(country_data).sort((a, b) => a.replace(/^\S+\s/, '').localeCompare(b.replace(/^\S+\s/, '')));
 
                 // Deterministic shuffle: no repeats within a full cycle
                 medalCountries.sort();
@@ -638,7 +638,7 @@
 
                 function getPerformance(proximity) {
                     const green = '🟩';
-                    const orange = '🟧';
+                    const orange = '🟨';
                     const grey = '⬜';
 
                     const n_green = Math.floor(proximity / 20)
