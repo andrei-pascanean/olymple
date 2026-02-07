@@ -29,14 +29,14 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Build a complete static JSON dataset of Olympic medal counts per country per sport (summer + winter)
 - [x] Implement a date-based seed to deterministically pick a daily country (e.g. hash the current date, mod by number of countries) so every player gets the same puzzle each day without needing a backend
 - [x] Expand country pool from the current 11 hardcoded countries to all Olympic-participating nations
-- [ ] Wire up the existing `country-flags.json` and `country-centroids.json` files which are currently unused
+- [x] Wire up the existing `country-flags.json` and `country-centroids.json` files which are currently unused
 
 ### Code quality
 
 - [ ] Separate JS and CSS into external files
-- [ ] Move from inline `onclick` handlers to `addEventListener`
-- [ ] Audit `const` vs `let` usage throughout
-- [ ] Add input sanitization and basic error handling
+- [x] Move from inline `onclick` handlers to `addEventListener`
+- [x] Audit `const` vs `let` usage throughout
+- [x] Add input sanitization and basic error handling
 
 ### UX polish
 
@@ -48,6 +48,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 - [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings
 - [ ] Show puzzle number (#gameId) in header during gameplay
+- [ ] Show remaining guesses with dashed outline
 
 ### Accessibility & compatibility
 
