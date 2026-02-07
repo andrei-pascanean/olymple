@@ -38,6 +38,11 @@
         .guess-cell.reveal .form-control {
             animation: guess-flip 0.5s ease-out forwards;
         }
+
+        .guess-cell.no-animate .form-control {
+            transform: none;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -595,6 +600,9 @@
                 let guesses = 0;
                 let performances = [];
                 let guessedCountries = new Set();
+                let completed = false;
+                let won = false;
+                let guessResults = [];
 
                 // --- Game logic (unchanged) ---
 
@@ -665,9 +673,146 @@
                         });
                 }
 
+                function saveGameState() {
+                    try {
+                        const state = {
+                            guesses: guesses,
+                            performances: performances,
+                            guessedCountries: Array.from(guessedCountries),
+                            guessResults: guessResults,
+                            completed: completed,
+                            won: won
+                        };
+                        const key = 'olympleState-' + getDateString() + '-' + gameMode;
+                        localStorage.setItem(key, JSON.stringify(state));
+                    } catch (e) { }
+                }
+
+                function renderGuessRow(rowNumber, country, distance, direction, proximity, isCorrect, animate) {
+                    const guessResultDiv = document.getElementById(`guess_${rowNumber}`);
+                    guessResultDiv.innerHTML = "";
+
+                    const FLIP_DELAY = 350;
+                    const FLIP_DURATION = 500;
+
+                    function createGuessCell(colClass, value) {
+                        const col = document.createElement("div");
+                        col.classList.add(colClass, "guess-cell");
+
+                        const inp = document.createElement("input");
+                        inp.classList.add("form-control", "text-center");
+                        inp.type = "text";
+                        inp.setAttribute("aria-label", "");
+                        inp.setAttribute("value", value);
+                        inp.disabled = true;
+                        inp.readOnly = true;
+
+                        col.appendChild(inp);
+                        return { col, inp };
+                    }
+
+                    const countryCell = createGuessCell("col-5", country);
+                    const distCell = createGuessCell("col-3", distance + "km");
+                    const headCell = createGuessCell("col-2", direction);
+                    const proxCell = createGuessCell("col-2", proximity + "%");
+
+                    const cells = [countryCell, distCell, headCell, proxCell];
+                    cells.forEach(c => guessResultDiv.appendChild(c.col));
+
+                    if (animate) {
+                        cells.forEach((c, i) => {
+                            c.inp.style.animationDelay = (i * FLIP_DELAY) + 'ms';
+                            c.col.classList.add('reveal');
+                        });
+                    } else {
+                        cells.forEach(c => c.col.classList.add('no-animate'));
+                    }
+
+                    const totalAnimTime = animate ? (cells.length - 1) * FLIP_DELAY + FLIP_DURATION : 0;
+
+                    if (isCorrect) {
+                        if (animate) {
+                            setTimeout(() => {
+                                cells.forEach(c => {
+                                    c.inp.style.backgroundColor = '#FFD700';
+                                    c.inp.style.borderColor = '#FFD700';
+                                    c.inp.style.color = '#000';
+                                });
+                            }, totalAnimTime);
+                        } else {
+                            cells.forEach(c => {
+                                c.inp.style.backgroundColor = '#FFD700';
+                                c.inp.style.borderColor = '#FFD700';
+                                c.inp.style.color = '#000';
+                            });
+                        }
+                    }
+
+                    return totalAnimTime;
+                }
+
+                function showEndGame(didWin) {
+                    const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
+                    const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
+                    correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
+                    const correctAnswerToast = bootstrap.Toast.getOrCreateInstance(correctAnswerToastEl);
+                    correctAnswerToast.show();
+
+                    const heroText = didWin ? "Congratulations!" : "Better luck next time...";
+                    const endGameModalBody = document.querySelector("#endGameModal .col");
+                    endGameModalBody.innerHTML = '';
+
+                    const resulth1 = document.createElement("h1");
+                    resulth1.innerText = heroText;
+                    endGameModalBody.appendChild(resulth1);
+
+                    const resulth2 = document.createElement("h2");
+                    resulth2.innerText = "Daily Olymple";
+                    endGameModalBody.appendChild(resulth2);
+
+                    const resultp = document.createElement("p");
+                    resultp.innerText = `Puzzle #${gameId}`;
+                    endGameModalBody.appendChild(resultp);
+
+                    const resultDiv = document.createElement("div");
+                    resultDiv.innerHTML = performances.join("<br>");
+                    endGameModalBody.appendChild(resultDiv);
+
+                    const shareButton = document.createElement("button");
+                    shareButton.type = "button";
+                    shareButton.className = "btn btn-primary mt-3 mb-3";
+                    shareButton.textContent = "Share";
+                    shareButton.id = "shareButton";
+                    endGameModalBody.appendChild(shareButton);
+
+                    const share_button_placeholder = document.getElementById("share_button_placeholder");
+                    if (!document.getElementById("globalShareButton")) {
+                        const shareBtnCol = document.createElement("div");
+                        shareBtnCol.className = "col-12";
+
+                        const shareBtn = document.createElement("button");
+                        shareBtn.type = "button";
+                        shareBtn.className = "form-control btn btn-primary text-center";
+                        shareBtn.textContent = "Share";
+                        shareBtn.id = "globalShareButton";
+
+                        shareBtnCol.appendChild(shareBtn);
+                        share_button_placeholder.appendChild(shareBtnCol);
+                    }
+
+                    endGameModal.show();
+
+                    document.getElementById("shareButton").addEventListener('click', function () {
+                        shareButtonCopyClipboard(this);
+                    });
+                    document.getElementById("globalShareButton").addEventListener('click', function () {
+                        shareButtonCopyClipboard(this);
+                    });
+                }
+
                 function handleGuess() {
 
-                    if (guesses >= 5) return;
+                    if (guesses >= 5 || completed) return;
 
                     const errorToastEl = document.getElementById("liveErrorToast");
                     const errorToastBody = errorToastEl.querySelector(".toast-body");
@@ -701,123 +846,70 @@
                         heading = '🎉'
                     }
 
-                    const guessResultDiv = document.getElementById(`guess_${guesses}`);
-                    guessResultDiv.innerHTML = "";
+                    guessResults.push({
+                        country: input.value,
+                        distance: distance,
+                        direction: heading,
+                        proximity: prox,
+                        isCorrect: distance === 0
+                    });
 
-                    const FLIP_DELAY = 350; // ms between each cell
-                    const FLIP_DURATION = 500; // ms per flip
-
-                    function createGuessCell(colClass, value) {
-                        const col = document.createElement("div");
-                        col.classList.add(colClass, "guess-cell");
-
-                        const inp = document.createElement("input");
-                        inp.classList.add("form-control", "text-center");
-                        inp.type = "text";
-                        inp.setAttribute("aria-label", "");
-                        inp.setAttribute("value", value);
-                        inp.disabled = true;
-                        inp.readOnly = true;
-
-                        col.appendChild(inp);
-                        return { col, inp };
+                    if ((guesses == 5) || (distance == 0)) {
+                        completed = true;
+                        won = (distance === 0);
                     }
 
-                    const countryCell = createGuessCell("col-5", input.value);
-                    const distCell = createGuessCell("col-3", distance + "km");
-                    const headCell = createGuessCell("col-2", heading);
-                    const proxCell = createGuessCell("col-2", prox + "%");
+                    saveGameState();
 
-                    const cells = [countryCell, distCell, headCell, proxCell];
-
-                    cells.forEach(c => guessResultDiv.appendChild(c.col));
+                    const totalAnimTime = renderGuessRow(guesses, input.value, distance, heading, prox, distance === 0, true);
 
                     document.getElementById("searchCountries").value = "";
 
-                    // Staggered flip reveal
-                    cells.forEach((c, i) => {
-                        c.inp.style.animationDelay = (i * FLIP_DELAY) + 'ms';
-                        c.col.classList.add('reveal');
-                    });
-
-                    const totalAnimTime = (cells.length - 1) * FLIP_DELAY + FLIP_DURATION;
-
-                    if (distance == 0) {
-                        setTimeout(() => {
-                            cells.forEach(c => {
-                                c.inp.style.backgroundColor = '#FFD700';
-                                c.inp.style.borderColor = '#FFD700';
-                                c.inp.style.color = '#000';
-                            });
-                            if (guesses === 1) {
-                                launchConfetti();
-                            }
-                        }, totalAnimTime);
+                    if (distance == 0 && guesses === 1) {
+                        setTimeout(() => launchConfetti(), totalAnimTime);
                     }
 
-                    if ((guesses == 5) || (distance == 0)) {
+                    if (completed) {
                         document.getElementById("guess-button").disabled = true;
-
-                        setTimeout(() => {
-                            const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
-                            const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
-                            correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
-                            const correctAnswerToast = bootstrap.Toast.getOrCreateInstance(correctAnswerToastEl);
-                            correctAnswerToast.show();
-
-                            const heroText = distance == 0 ? "Congratulations!" : "Better luck next time...";
-
-                            const endGameModalBody = document.querySelector("#endGameModal .col");
-
-                            endGameModalBody.innerHTML = '';
-
-                            const resulth1 = document.createElement("h1");
-                            resulth1.innerText = heroText
-                            endGameModalBody.appendChild(resulth1);
-
-                            const resulth2 = document.createElement("h2");
-                            resulth2.innerText = "Daily Olymple"
-                            endGameModalBody.appendChild(resulth2);
-
-                            const resultp = document.createElement("p");
-                            resultp.innerText = `Puzzle #${gameId}`
-                            endGameModalBody.appendChild(resultp);
-
-                            const resultDiv = document.createElement("div");
-                            resultDiv.innerHTML = performances.join("<br>");
-                            endGameModalBody.appendChild(resultDiv);
-
-                            const shareButton = document.createElement("button");
-
-                            shareButton.type = "button";
-                            shareButton.className = "btn btn-primary mt-3 mb-3";
-                            shareButton.textContent = "Share";
-                            shareButton.id = "shareButton"
-                            endGameModalBody.appendChild(shareButton);
-
-                            const share_button_placeholder = document.getElementById("share_button_placeholder");
-                            const shareBtnCol = document.createElement("div");
-                            shareBtnCol.className = "col-12";
-
-                            const shareBtn = document.createElement("button");
-                            shareBtn.type = "button";
-                            shareBtn.className = "form-control btn btn-primary text-center";
-                            shareBtn.textContent = "Share";
-                            shareBtn.id = "globalShareButton";
-
-                            shareBtnCol.appendChild(shareBtn);
-                            share_button_placeholder.appendChild(shareBtnCol);
-
-                            endGameModal.show()
-
-                            document.getElementById("shareButton").addEventListener('click', function () {
-                                shareButtonCopyClipboard(this)
-                            })
-                            document.getElementById("globalShareButton").addEventListener('click', function () {
-                                shareButtonCopyClipboard(this)
-                            })
-                        }, totalAnimTime);
+                        setTimeout(() => showEndGame(won), totalAnimTime);
                     }
+                }
+
+                // --- Restore saved state ---
+                const stateKey = 'olympleState-' + getDateString() + '-' + gameMode;
+                try {
+                    // Clean up old state from previous days
+                    const todayStr = getDateString();
+                    const keysToRemove = [];
+                    for (let i = 0; i < localStorage.length; i++) {
+                        const key = localStorage.key(i);
+                        if (key.startsWith('olympleState-') && !key.includes(todayStr)) {
+                            keysToRemove.push(key);
+                        }
+                    }
+                    keysToRemove.forEach(k => localStorage.removeItem(k));
+
+                    const savedRaw = localStorage.getItem(stateKey);
+                    if (savedRaw) {
+                        const saved = JSON.parse(savedRaw);
+                        guesses = saved.guesses;
+                        performances = saved.performances;
+                        guessedCountries = new Set(saved.guessedCountries);
+                        guessResults = saved.guessResults || [];
+                        completed = saved.completed || false;
+                        won = saved.won || false;
+
+                        guessResults.forEach((result, index) => {
+                            renderGuessRow(index + 1, result.country, result.distance, result.direction, result.proximity, result.isCorrect, false);
+                        });
+
+                        if (completed) {
+                            document.getElementById("guess-button").disabled = true;
+                            showEndGame(won);
+                        }
+                    }
+                } catch (e) {
+                    localStorage.removeItem(stateKey);
                 }
 
                 document.getElementById("guess-button").onclick = handleGuess;

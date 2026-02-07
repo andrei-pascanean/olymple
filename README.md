@@ -26,9 +26,9 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 ### Data & game logic
 
-- [ ] Build a complete static JSON dataset of Olympic medal counts per country per sport (summer + winter)
-- [ ] Implement a date-based seed to deterministically pick a daily country (e.g. hash the current date, mod by number of countries) so every player gets the same puzzle each day without needing a backend
-- [ ] Expand country pool from the current 11 hardcoded countries to all Olympic-participating nations
+- [x] Build a complete static JSON dataset of Olympic medal counts per country per sport (summer + winter)
+- [x] Implement a date-based seed to deterministically pick a daily country (e.g. hash the current date, mod by number of countries) so every player gets the same puzzle each day without needing a backend
+- [x] Expand country pool from the current 11 hardcoded countries to all Olympic-participating nations
 - [ ] Wire up the existing `country-flags.json` and `country-centroids.json` files which are currently unused
 
 ### Code quality
@@ -40,10 +40,10 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 ### UX polish
 
-- [ ] Make the correct guess show up in gold
-- [ ] Add "How to Play" instructions modal
+- [x] Make the correct guess show up in gold
+- [x] Add "How to Play" instructions modal
 - [ ] Add a themed background
-- [ ] Add reveal animation when showing guess performance
+- [x] Add reveal animation when showing guess performance
 - [ ] Persist game state in localStorage so refreshing doesn't reset progress
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 
@@ -56,19 +56,13 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 ## Feature ideas
 
 ### Gameplay
-- [ ] Use proportional all-time medal count to prevent guessing based on total medal bar size
-- [ ] Showcase 4th-place finishes for countries with no medals
 - [ ] Add the option of guessing countries that no longer exist (e.g. Soviet Union, Yugoslavia)
 - [ ] Show interesting Olympic facts about the daily country after the game ends
 - [ ] Add a streak counter for consecutive days played
-- [ ] Hard mode: show fewer sports or hide gold/silver/bronze breakdown
 - [ ] Hint system: reveal the continent or first letter after N wrong guesses
-- [ ] Add a “Why This Country?” Reveal at the End with an interesting fact about it's olympic performance
-- [ ] Animate each guess sliding in (micro-reward)
 - [ ] Add a guess counter
-- [ ] Add difficulty game modes
-- [ ] Hover tooltips explaining % accuracy
-- [ ] Confetti only on first-try win
+- [ ] Add difficulty game modes, e.g. Hard mode: hide gold/silver/bronze breakdown
+- [ ] Confetti on all wins
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in
