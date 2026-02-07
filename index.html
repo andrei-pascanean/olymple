@@ -338,8 +338,8 @@
             const CENTROID_NAME_MAP = {
                 "Ivory Coast": "Côte d'Ivoire",
                 "North Macedonia": "Macedonia [FYROM]",
-                "Curacao": "Netherlands Antilles",
-                "US Virgin Islands": "U.S. Virgin Islands"
+                "Curaçao": "Netherlands Antilles",
+                "Chinese Taipei": "Taiwan"
             };
 
             // Centroid name -> country-flags.json name (for non-medal countries)
@@ -472,7 +472,7 @@
 
             async function init() {
                 const [medalData, centroidData, flagsData] = await Promise.all([
-                    fetch('olympic-medals.json').then(r => r.json()),
+                    fetch('olympic-medals-v2.json').then(r => r.json()),
                     fetch('country-centroids.json').then(r => r.json()),
                     fetch('country-flags.json').then(r => r.json())
                 ]);
