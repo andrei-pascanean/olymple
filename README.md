@@ -83,3 +83,6 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings
 - [ ] Winter Olympics mode by default — set winter mode for first-time visitors with a dismissible banner, returning players keep their preference
 - [ ] Add a form for people to give feedback
+
+### Nice-to-have:
+- [ ] Hints to make the game easier
