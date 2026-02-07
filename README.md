@@ -75,3 +75,11 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add ability to track games by logging in
 - [ ] Leaderboard showing average guesses to solve
 - [ ] Multiplayer mode: race a friend to guess first
+
+### Must-have features before go-live
+- [ ] Show the how to play pop-up by default
+- [ ] Open Graph meta tags — title, description, and preview image for social sharing
+- [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
+- [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings
+- [ ] Winter Olympics mode by default — set winter mode for first-time visitors with a dismissible banner, returning players keep their preference
+- [ ] Add a form for people to give feedback
