@@ -69,6 +69,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Confetti on all wins
 - [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Richer share text — include direction emoji and distance per guess line
+- [ ] Random guess for if the user doesn't know where to start
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in
