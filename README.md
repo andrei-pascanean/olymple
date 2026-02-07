@@ -65,7 +65,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Hint system: reveal the continent or first letter after N wrong guesses
 - [ ] Add a guess counter
 - [ ] Add difficulty game modes, e.g. Hard mode: hide gold/silver/bronze breakdown
-- [ ] Confetti on all wins
+- [x] Confetti on all wins
 - [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Richer share text — include direction emoji and distance per guess line
 

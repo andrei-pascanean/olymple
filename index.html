@@ -798,6 +798,23 @@
 
                         shareBtnCol.appendChild(shareBtn);
                         share_button_placeholder.appendChild(shareBtnCol);
+
+                        if (didWin) {
+                            const globalConfettiCol = document.createElement("div");
+                            globalConfettiCol.className = "col-12 mt-1";
+
+                            const globalConfettiBtn = document.createElement("button");
+                            globalConfettiBtn.type = "button";
+                            globalConfettiBtn.className = "form-control btn text-center";
+                            globalConfettiBtn.style.backgroundColor = '#FFD700';
+                            globalConfettiBtn.style.borderColor = '#FFD700';
+                            globalConfettiBtn.style.color = '#000';
+                            globalConfettiBtn.textContent = "🎉 More Confetti!";
+                            globalConfettiBtn.addEventListener('click', launchConfetti);
+
+                            globalConfettiCol.appendChild(globalConfettiBtn);
+                            share_button_placeholder.appendChild(globalConfettiCol);
+                        }
                     }
 
                     endGameModal.show();
@@ -865,7 +882,7 @@
 
                     document.getElementById("searchCountries").value = "";
 
-                    if (distance == 0 && guesses === 1) {
+                    if (distance == 0) {
                         setTimeout(() => launchConfetti(), totalAnimTime);
                     }
 
