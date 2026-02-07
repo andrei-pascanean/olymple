@@ -44,8 +44,10 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Add "How to Play" instructions modal
 - [ ] Add a themed background
 - [x] Add reveal animation when showing guess performance
-- [ ] Persist game state in localStorage so refreshing doesn't reset progress
+- [x] Persist game state in localStorage so refreshing doesn't reset progress
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
+- [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings
+- [ ] Show puzzle number (#gameId) in header during gameplay
 
 ### Accessibility & compatibility
 
@@ -59,10 +61,13 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add the option of guessing countries that no longer exist (e.g. Soviet Union, Yugoslavia)
 - [ ] Show interesting Olympic facts about the daily country after the game ends
 - [ ] Add a streak counter for consecutive days played
+- [ ] Persistent stats — win rate, guess distribution histogram, current/max streak in localStorage
 - [ ] Hint system: reveal the continent or first letter after N wrong guesses
 - [ ] Add a guess counter
 - [ ] Add difficulty game modes, e.g. Hard mode: hide gold/silver/bronze breakdown
 - [ ] Confetti on all wins
+- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
+- [ ] Richer share text — include direction emoji and distance per guess line
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in
