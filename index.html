@@ -10,18 +10,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
     <style>
         @keyframes guess-flip {
-            0%   { transform: rotateX(90deg); opacity: 0; }
-            50%  { opacity: 1; }
-            100% { transform: rotateX(0deg); opacity: 1; }
+            0% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
         }
+
         .guess-cell {
             perspective: 600px;
         }
+
         .guess-cell .form-control {
             transform: rotateX(90deg);
             opacity: 0;
             font-weight: bold;
         }
+
         .guess-cell.reveal .form-control {
             animation: guess-flip 0.5s ease-out forwards;
         }
@@ -159,18 +172,18 @@
             <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
                 <h1 class="d-flex align-items-center justify-content-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;"
-                        data-bs-toggle="modal" data-bs-target="#howToPlayModal"
-                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;" data-bs-toggle="modal"
+                        data-bs-target="#howToPlayModal" onmouseover="this.style.opacity='1'"
+                        onmouseout="this.style.opacity='0.5'">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                         <path
                             d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                     </svg>
                     <span class="mx-2" id="gameTitle">Daily Olymple</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;"
-                        data-bs-toggle="offcanvas" data-bs-target="#settingsOffcanvas"
-                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;" data-bs-toggle="offcanvas"
+                        data-bs-target="#settingsOffcanvas" onmouseover="this.style.opacity='1'"
+                        onmouseout="this.style.opacity='0.5'">
                         <path fill-rule="evenodd"
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                     </svg>
@@ -303,7 +316,7 @@
             }
 
             function mulberry32(seed) {
-                return function() {
+                return function () {
                     seed |= 0; seed = seed + 0x6D2B79F5 | 0;
                     let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
                     t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
@@ -746,63 +759,63 @@
                         document.getElementById("guess-button").disabled = true;
 
                         setTimeout(() => {
-                        const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
-                        const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
-                        correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
-                        const correctAnswerToast = bootstrap.Toast.getOrCreateInstance(correctAnswerToastEl);
-                        correctAnswerToast.show();
+                            const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
+                            const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
+                            correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
+                            const correctAnswerToast = bootstrap.Toast.getOrCreateInstance(correctAnswerToastEl);
+                            correctAnswerToast.show();
 
-                        const heroText = distance == 0 ? "Congratulations!" : "Better luck next time...";
+                            const heroText = distance == 0 ? "Congratulations!" : "Better luck next time...";
 
-                        const endGameModalBody = document.querySelector("#endGameModal .col");
+                            const endGameModalBody = document.querySelector("#endGameModal .col");
 
-                        endGameModalBody.innerHTML = '';
+                            endGameModalBody.innerHTML = '';
 
-                        const resulth1 = document.createElement("h1");
-                        resulth1.innerText = heroText
-                        endGameModalBody.appendChild(resulth1);
+                            const resulth1 = document.createElement("h1");
+                            resulth1.innerText = heroText
+                            endGameModalBody.appendChild(resulth1);
 
-                        const resulth2 = document.createElement("h2");
-                        resulth2.innerText = "Daily Olymple"
-                        endGameModalBody.appendChild(resulth2);
+                            const resulth2 = document.createElement("h2");
+                            resulth2.innerText = "Daily Olymple"
+                            endGameModalBody.appendChild(resulth2);
 
-                        const resultp = document.createElement("p");
-                        resultp.innerText = `Puzzle #${gameId}`
-                        endGameModalBody.appendChild(resultp);
+                            const resultp = document.createElement("p");
+                            resultp.innerText = `Puzzle #${gameId}`
+                            endGameModalBody.appendChild(resultp);
 
-                        const resultDiv = document.createElement("div");
-                        resultDiv.innerHTML = performances.join("<br>");
-                        endGameModalBody.appendChild(resultDiv);
+                            const resultDiv = document.createElement("div");
+                            resultDiv.innerHTML = performances.join("<br>");
+                            endGameModalBody.appendChild(resultDiv);
 
-                        const shareButton = document.createElement("button");
+                            const shareButton = document.createElement("button");
 
-                        shareButton.type = "button";
-                        shareButton.className = "btn btn-primary mt-3 mb-3";
-                        shareButton.textContent = "Share";
-                        shareButton.id = "shareButton"
-                        endGameModalBody.appendChild(shareButton);
+                            shareButton.type = "button";
+                            shareButton.className = "btn btn-primary mt-3 mb-3";
+                            shareButton.textContent = "Share";
+                            shareButton.id = "shareButton"
+                            endGameModalBody.appendChild(shareButton);
 
-                        const share_button_placeholder = document.getElementById("share_button_placeholder");
-                        const shareBtnCol = document.createElement("div");
-                        shareBtnCol.className = "col-12";
+                            const share_button_placeholder = document.getElementById("share_button_placeholder");
+                            const shareBtnCol = document.createElement("div");
+                            shareBtnCol.className = "col-12";
 
-                        const shareBtn = document.createElement("button");
-                        shareBtn.type = "button";
-                        shareBtn.className = "form-control btn btn-primary text-center";
-                        shareBtn.textContent = "Share";
-                        shareBtn.id = "globalShareButton";
+                            const shareBtn = document.createElement("button");
+                            shareBtn.type = "button";
+                            shareBtn.className = "form-control btn btn-primary text-center";
+                            shareBtn.textContent = "Share";
+                            shareBtn.id = "globalShareButton";
 
-                        shareBtnCol.appendChild(shareBtn);
-                        share_button_placeholder.appendChild(shareBtnCol);
+                            shareBtnCol.appendChild(shareBtn);
+                            share_button_placeholder.appendChild(shareBtnCol);
 
-                        endGameModal.show()
+                            endGameModal.show()
 
-                        document.getElementById("shareButton").addEventListener('click', function () {
-                            shareButtonCopyClipboard(this)
-                        })
-                        document.getElementById("globalShareButton").addEventListener('click', function () {
-                            shareButtonCopyClipboard(this)
-                        })
+                            document.getElementById("shareButton").addEventListener('click', function () {
+                                shareButtonCopyClipboard(this)
+                            })
+                            document.getElementById("globalShareButton").addEventListener('click', function () {
+                                shareButtonCopyClipboard(this)
+                            })
                         }, totalAnimTime);
                     }
                 }
