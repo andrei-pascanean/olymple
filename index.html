@@ -19,11 +19,13 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Olymple - Daily Olympic Medal Guessing Game">
-    <meta name="twitter:description" content="Guess the Olympic country from its medal history. A new puzzle every day!">
+    <meta name="twitter:description"
+        content="Guess the Olympic country from its medal history. A new puzzle every day!">
     <meta name="twitter:image" content="https://olymple.vercel.app/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏅</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏅</text></svg>">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -64,6 +66,123 @@
         .guess-cell.no-animate .form-control {
             transform: none;
             opacity: 1;
+        }
+
+        /* Hint Cards */
+        .hint-card {
+            flex: 1 1 0;
+            max-width: 100px;
+            min-width: 75px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            padding: 8px 4px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .hint-card-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hint-locked {
+            background-color: #e9ecef;
+            border: 2px solid #dee2e6;
+            opacity: 0.5;
+        }
+
+        .hint-locked .hint-icon {
+            font-size: 1.4rem;
+        }
+
+        .hint-locked .hint-label {
+            font-size: 0.65rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .hint-unlocked {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            cursor: pointer;
+            animation: hint-pulse 2s infinite;
+        }
+
+        .hint-unlocked:hover {
+            background-color: #ffecb5;
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+        }
+
+        @keyframes hint-pulse {
+
+            0%,
+            100% {
+                border-color: #ffc107;
+            }
+
+            50% {
+                border-color: #ff9800;
+            }
+        }
+
+        .hint-unlocked .hint-icon {
+            font-size: 1.4rem;
+        }
+
+        .hint-unlocked .hint-label {
+            font-size: 0.65rem;
+            color: #856404;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        .hint-unlocked .hint-tap-text {
+            font-size: 0.55rem;
+            color: #997a00;
+            margin-top: 1px;
+            font-style: italic;
+        }
+
+        .hint-revealed {
+            background-color: #d1e7dd;
+            border: 2px solid #198754;
+        }
+
+        .hint-revealed .hint-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #0f5132;
+        }
+
+        .hint-revealed .hint-label {
+            font-size: 0.6rem;
+            color: #198754;
+            margin-top: 2px;
+        }
+
+        #hint-flag.hint-revealed .hint-value {
+            font-size: 1.8rem;
+        }
+
+        @keyframes hint-flip {
+            0% {
+                transform: rotateY(90deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+
+        .hint-card-inner.hint-flipped {
+            animation: hint-flip 0.5s ease-out forwards;
         }
     </style>
 </head>
@@ -260,6 +379,12 @@
                     <tbody id="winterTableBody">
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3 mt-2" id="hintContainer" style="display: none;">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="d-flex justify-content-center gap-2" id="hintCards">
+                </div>
             </div>
         </div>
         <div class="row justify-content-center mb-3 mt-3">
@@ -523,10 +648,12 @@
                     centroidByName[c.name] = { lat: c.latitude, lon: c.longitude };
                 });
 
-                // Build flag lookup by name
+                // Build flag and continent lookups by name
                 const flagByName = {};
+                const continentByName = {};
                 flagsData.forEach(f => {
                     flagByName[f.name] = f.flag;
+                    if (f.continent) continentByName[f.name] = f.continent;
                 });
 
                 // Build country_data: "🇫🇷 France" -> { lat, lon, noc }
@@ -626,6 +753,19 @@
                 let won = false;
                 let guessResults = [];
 
+                // --- Hint system ---
+                const correctName = medalData[correctNoc].name;
+                const correctFlag = medalData[correctNoc].flag;
+                const correctCentroidName = CENTROID_NAME_MAP[correctName] || correctName;
+                const correctFlagName = CENTROID_TO_FLAG_NAME[correctCentroidName] || correctCentroidName;
+                const correctContinent = continentByName[correctFlagName] || continentByName[correctName] || 'Unknown';
+                const hints = [
+                    { id: 'hint-continent', label: 'Continent', lockedIcon: '🌍', value: correctContinent },
+                    { id: 'hint-first-letter', label: 'First Letter', lockedIcon: '🔤', value: correctName.charAt(0).toUpperCase() },
+                    { id: 'hint-flag', label: 'Flag', lockedIcon: '🏳️', value: correctFlag }
+                ];
+                let hintsRevealed = [false, false, false];
+
                 // --- Game logic (unchanged) ---
 
                 function haversine(lat1, lon1, lat2, lon2) {
@@ -703,7 +843,8 @@
                             guessedCountries: Array.from(guessedCountries),
                             guessResults: guessResults,
                             completed: completed,
-                            won: won
+                            won: won,
+                            hintsRevealed: hintsRevealed
                         };
                         const key = 'olympleState-' + getDateString() + '-' + gameMode;
                         localStorage.setItem(key, JSON.stringify(state));
@@ -771,6 +912,125 @@
                     }
 
                     return totalAnimTime;
+                }
+
+                function buildCard(hint, index, state) {
+                    const card = document.createElement('div');
+                    card.className = 'hint-card';
+                    card.id = hint.id;
+                    card.dataset.state = state;
+
+                    const inner = document.createElement('div');
+                    inner.className = 'hint-card-inner';
+
+                    if (state === 'revealed') {
+                        card.classList.add('hint-revealed');
+
+                        const valueEl = document.createElement('div');
+                        valueEl.className = 'hint-value';
+                        valueEl.textContent = hint.value;
+                        inner.appendChild(valueEl);
+
+                        const labelEl = document.createElement('div');
+                        labelEl.className = 'hint-label';
+                        labelEl.textContent = hint.label;
+                        inner.appendChild(labelEl);
+                    } else if (state === 'unlocked') {
+                        card.classList.add('hint-unlocked');
+                        card.setAttribute('role', 'button');
+                        card.setAttribute('tabindex', '0');
+                        card.title = 'Click to reveal ' + hint.label.toLowerCase();
+
+                        const iconEl = document.createElement('div');
+                        iconEl.className = 'hint-icon';
+                        iconEl.textContent = hint.lockedIcon;
+                        inner.appendChild(iconEl);
+
+                        const labelEl = document.createElement('div');
+                        labelEl.className = 'hint-label';
+                        labelEl.textContent = hint.label;
+                        inner.appendChild(labelEl);
+
+                        const tapEl = document.createElement('div');
+                        tapEl.className = 'hint-tap-text';
+                        tapEl.textContent = 'Tap to reveal';
+                        inner.appendChild(tapEl);
+
+                        function revealCard() {
+                            hintsRevealed[index] = true;
+                            saveGameState();
+
+                            card.className = 'hint-card hint-revealed';
+                            card.dataset.state = 'revealed';
+                            card.removeAttribute('role');
+                            card.removeAttribute('tabindex');
+                            card.title = '';
+
+                            inner.innerHTML = '';
+                            inner.classList.add('hint-flipped');
+
+                            const valueEl = document.createElement('div');
+                            valueEl.className = 'hint-value';
+                            valueEl.textContent = hint.value;
+                            inner.appendChild(valueEl);
+
+                            const labelEl = document.createElement('div');
+                            labelEl.className = 'hint-label';
+                            labelEl.textContent = hint.label;
+                            inner.appendChild(labelEl);
+                        }
+
+                        card.addEventListener('click', revealCard);
+                        card.addEventListener('keydown', (e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                revealCard();
+                            }
+                        });
+                    } else {
+                        card.classList.add('hint-locked');
+                        card.title = 'Unlocks after guess #' + (index + 1);
+
+                        const iconEl = document.createElement('div');
+                        iconEl.className = 'hint-icon';
+                        iconEl.textContent = '🔒';
+                        inner.appendChild(iconEl);
+
+                        const labelEl = document.createElement('div');
+                        labelEl.className = 'hint-label';
+                        labelEl.textContent = hint.label;
+                        inner.appendChild(labelEl);
+                    }
+
+                    card.appendChild(inner);
+                    return card;
+                }
+
+                function renderHints() {
+                    const container = document.getElementById('hintContainer');
+                    const cardsDiv = document.getElementById('hintCards');
+
+                    if (guesses === 0) {
+                        container.style.display = 'none';
+                        return;
+                    }
+                    container.style.display = '';
+
+                    hints.forEach((hint, index) => {
+                        const isRevealed = hintsRevealed[index];
+                        const isUnlocked = guesses >= index + 1;
+                        const targetState = isRevealed ? 'revealed' : isUnlocked ? 'unlocked' : 'locked';
+
+                        const existing = document.getElementById(hint.id);
+                        if (existing && existing.dataset.state === targetState) return;
+
+                        const card = buildCard(hint, index, targetState);
+                        if (existing) {
+                            existing.replaceWith(card);
+                        } else {
+                            cardsDiv.appendChild(card);
+                        }
+                    });
                 }
 
                 function showEndGame(didWin) {
@@ -899,6 +1159,7 @@
                     }
 
                     saveGameState();
+                    renderHints();
 
                     const totalAnimTime = renderGuessRow(guesses, input.value, distance, heading, prox, distance === 0, true);
 
@@ -937,10 +1198,12 @@
                         guessResults = saved.guessResults || [];
                         completed = saved.completed || false;
                         won = saved.won || false;
+                        hintsRevealed = saved.hintsRevealed || [false, false, false];
 
                         guessResults.forEach((result, index) => {
                             renderGuessRow(index + 1, result.country, result.distance, result.direction, result.proximity, result.isCorrect, false);
                         });
+                        renderHints();
 
                         if (completed) {
                             document.getElementById("guess-button").disabled = true;
@@ -957,6 +1220,8 @@
                     howToPlayModal.show();
                     localStorage.setItem('olympleHasPlayed', 'true');
                 }
+
+                renderHints();
 
                 document.getElementById("guess-button").onclick = handleGuess;
 
