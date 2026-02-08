@@ -822,8 +822,10 @@
 
                 function shareButtonCopyClipboard(button) {
                     const modeSuffix = gameMode === 'summer' ? ' ☀️' : gameMode === 'winter' ? ' ❄️' : '';
+                    const hintsUsed = hintsRevealed.filter(Boolean).length;
+                    const hintsSuffix = hintsUsed > 0 ? ` | 💡 ${hintsUsed}/3` : '';
                     const clipBoardText = [
-                        `#DailyOlymple${modeSuffix} #${gameId} ${guesses}/5`,
+                        `#DailyOlymple${modeSuffix} #${gameId} ${guesses}/5${hintsSuffix}`,
                         performances.join("\n"),
                         "https://olymple.vercel.app"
                     ].join("\n");
@@ -1053,7 +1055,10 @@
                     endGameModalBody.appendChild(resulth2);
 
                     const resultp = document.createElement("p");
-                    resultp.innerText = `Puzzle #${gameId}`;
+                    const hintsUsed = hintsRevealed.filter(Boolean).length;
+                    resultp.innerText = hintsUsed > 0
+                        ? `Puzzle #${gameId} — 💡 ${hintsUsed}/3 hints used`
+                        : `Puzzle #${gameId}`;
                     endGameModalBody.appendChild(resultp);
 
                     const resultDiv = document.createElement("div");
