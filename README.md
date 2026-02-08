@@ -77,7 +77,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Multiplayer mode: race a friend to guess first
 
 ### Must-have features before go-live
-- [ ] Update shareable results to include hints used
+- [x] Update shareable results to include hints used
 - [ ] Easy mode by default with nations that have more than x amount of medals, toggle for hard mode in settings
 - [x] Hints to make the game easier
 - [ ] Random guess
