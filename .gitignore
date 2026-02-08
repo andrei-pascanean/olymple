@@ -1,2 +1,5 @@
 CLAUDE.md
 *.csv
+node_modules/
+test-results/
+playwright-report/
