@@ -951,6 +951,13 @@
                     localStorage.removeItem(stateKey);
                 }
 
+                // Show How to Play for first-time visitors
+                if (!localStorage.getItem('olympleHasPlayed')) {
+                    const howToPlayModal = new bootstrap.Modal(document.getElementById('howToPlayModal'));
+                    howToPlayModal.show();
+                    localStorage.setItem('olympleHasPlayed', 'true');
+                }
+
                 document.getElementById("guess-button").onclick = handleGuess;
 
                 input.addEventListener('keydown', (e) => {
