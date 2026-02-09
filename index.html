@@ -351,8 +351,8 @@
                 </div>
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input" type="checkbox" role="switch" id="winterModeToggle">
-                    <label class="form-check-label" for="winterModeToggle">❄️ Winter Mode</label>
-                    <div class="form-text">Only countries with winter medals</div>
+                    <label class="form-check-label" for="winterModeToggle">🏔️ 2026 Winter Olympics</label>
+                    <div class="form-text">Only countries participating in Milano Cortina 2026</div>
                 </div>
                 <hr>
                 <div class="mb-3">
@@ -394,6 +394,14 @@
                 <h3>
                     Guess the country based on its medals!
                 </h3>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-2" id="winter2026Banner" style="display: none;">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="alert alert-info fade show d-flex align-items-center justify-content-center mb-0 py-2" role="alert" id="winter2026Alert">
+                    <span><strong>🏔️ Milano Cortina 2026</strong> — Winter Olympics Edition</span>
+                    <button type="button" class="btn-close ms-2 flex-shrink-0" aria-label="Close" id="winter2026BannerClose"></button>
+                </div>
             </div>
         </div>
         <div class="row justify-content-center mt-3 mb-3">
@@ -545,7 +553,10 @@
             const daysSinceEpoch = Math.floor((today - EPOCH) / (1000 * 60 * 60 * 24));
 
             function getGameMode() {
-                return localStorage.getItem('olympleGameMode') || 'default';
+                const stored = localStorage.getItem('olympleGameMode');
+                if (stored === 'winter') return 'winter2026'; // migrate old winter mode
+                if (stored !== null) return stored;
+                return 'winter2026'; // default for first-time visitors
             }
 
             function setGameMode(mode) {
@@ -703,11 +714,22 @@
             }
 
             async function init() {
-                const [medalData, centroidData, flagsData] = await Promise.all([
+                const [medalData, centroidData, flagsData, participating2026Data] = await Promise.all([
                     fetch('olympic-medals-v2.json').then(r => r.json()),
                     fetch('country-centroids.json').then(r => r.json()),
-                    fetch('country-flags.json').then(r => r.json())
+                    fetch('country-flags.json').then(r => r.json()),
+                    fetch('2026_participating_countries.json').then(r => r.json())
                 ]);
+
+                // Build set of 2026 participating country names (mapped to medal data names)
+                const noc2026Names = new Set();
+                participating2026Data['2026_Winter_Olympics_NOCs'].forEach(c => {
+                    let name = c.noc;
+                    if (name === 'Individual Neutral Athletes') return;
+                    if (name === 'Italy (host)') name = 'Italy';
+                    if (name === 'Great Britain') name = 'United Kingdom';
+                    noc2026Names.add(name);
+                });
 
                 // Build centroid lookup by name
                 const centroidByName = {};
@@ -766,9 +788,10 @@
                     medalCountries = medalCountries.filter(k => {
                         return medalData[country_data[k].noc].summer.length > 0;
                     });
-                } else if (gameMode === 'winter') {
+                } else if (gameMode === 'winter2026') {
                     medalCountries = medalCountries.filter(k => {
-                        return medalData[country_data[k].noc].winter.length > 0;
+                        const noc = country_data[k].noc;
+                        return noc2026Names.has(medalData[noc].name) && medalData[noc].winter.length > 0;
                     });
                 }
 
@@ -888,7 +911,7 @@
                 }
 
                 function shareButtonCopyClipboard(button) {
-                    const modeSuffix = gameMode === 'summer' ? ' ☀️' : gameMode === 'winter' ? ' ❄️' : '';
+                    const modeSuffix = gameMode === 'summer' ? ' ☀️' : gameMode === 'winter2026' ? ' 🏔️' : '';
                     const hintsUsed = hintsRevealed.filter(Boolean).length;
                     const hintsSuffix = hintsUsed > 0 ? ` | 💡 ${hintsUsed}/3` : '';
                     const clipBoardText = [
@@ -1317,14 +1340,14 @@
 
                 // Set initial toggle state from localStorage
                 summerToggle.checked = currentMode === 'summer';
-                winterToggle.checked = currentMode === 'winter';
+                winterToggle.checked = currentMode === 'winter2026';
 
                 // Update title with mode indicator
                 const titleEl = document.getElementById('gameTitle');
                 if (currentMode === 'summer') {
                     titleEl.textContent = 'Daily Olymple ☀️';
-                } else if (currentMode === 'winter') {
-                    titleEl.textContent = 'Daily Olymple ❄️';
+                } else if (currentMode === 'winter2026') {
+                    titleEl.textContent = 'Daily Olymple 🏔️';
                 }
 
                 // Mutual exclusion: toggling one off = default, toggling one on = that mode
@@ -1339,7 +1362,7 @@
 
                 winterToggle.addEventListener('change', function () {
                     if (this.checked) {
-                        setGameMode('winter');
+                        setGameMode('winter2026');
                     } else {
                         setGameMode('default');
                     }
@@ -1353,6 +1376,15 @@
                     setDarkMode(this.checked);
                     applyDarkMode(this.checked);
                 });
+
+                // Show 2026 Winter Olympics banner
+                if (currentMode === 'winter2026' && !localStorage.getItem('olymple2026BannerDismissed')) {
+                    document.getElementById('winter2026Banner').style.display = '';
+                    document.getElementById('winter2026BannerClose').addEventListener('click', () => {
+                        localStorage.setItem('olymple2026BannerDismissed', 'true');
+                        document.getElementById('winter2026Banner').style.display = 'none';
+                    });
+                }
             })();
         </script>
 </body>

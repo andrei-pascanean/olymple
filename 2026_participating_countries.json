@@ -1,0 +1,376 @@
+{
+    "2026_Winter_Olympics_NOCs": [
+        {
+            "noc": "Albania",
+            "athletes": 4
+        },
+        {
+            "noc": "Andorra",
+            "athletes": 7
+        },
+        {
+            "noc": "Argentina",
+            "athletes": 8
+        },
+        {
+            "noc": "Armenia",
+            "athletes": 5
+        },
+        {
+            "noc": "Australia",
+            "athletes": 54
+        },
+        {
+            "noc": "Austria",
+            "athletes": 117
+        },
+        {
+            "noc": "Azerbaijan",
+            "athletes": 2
+        },
+        {
+            "noc": "Belgium",
+            "athletes": 30
+        },
+        {
+            "noc": "Benin",
+            "athletes": 1
+        },
+        {
+            "noc": "Bolivia",
+            "athletes": 1
+        },
+        {
+            "noc": "Bosnia and Herzegovina",
+            "athletes": 5
+        },
+        {
+            "noc": "Brazil",
+            "athletes": 15
+        },
+        {
+            "noc": "Bulgaria",
+            "athletes": 20
+        },
+        {
+            "noc": "Canada",
+            "athletes": 210
+        },
+        {
+            "noc": "Chile",
+            "athletes": 4
+        },
+        {
+            "noc": "China",
+            "athletes": 126
+        },
+        {
+            "noc": "Colombia",
+            "athletes": 1
+        },
+        {
+            "noc": "Croatia",
+            "athletes": 14
+        },
+        {
+            "noc": "Cyprus",
+            "athletes": 2
+        },
+        {
+            "noc": "Czech Republic",
+            "athletes": 114
+        },
+        {
+            "noc": "Denmark",
+            "athletes": 39
+        },
+        {
+            "noc": "Ecuador",
+            "athletes": 1
+        },
+        {
+            "noc": "Eritrea",
+            "athletes": 1
+        },
+        {
+            "noc": "Estonia",
+            "athletes": 32
+        },
+        {
+            "noc": "Finland",
+            "athletes": 103
+        },
+        {
+            "noc": "France",
+            "athletes": 162
+        },
+        {
+            "noc": "Georgia",
+            "athletes": 8
+        },
+        {
+            "noc": "Germany",
+            "athletes": 189
+        },
+        {
+            "noc": "Great Britain",
+            "athletes": 55
+        },
+        {
+            "noc": "Greece",
+            "athletes": 5
+        },
+        {
+            "noc": "Guinea-Bissau",
+            "athletes": 1
+        },
+        {
+            "noc": "Haiti",
+            "athletes": 2
+        },
+        {
+            "noc": "Hong Kong",
+            "athletes": 4
+        },
+        {
+            "noc": "Hungary",
+            "athletes": 15
+        },
+        {
+            "noc": "Iceland",
+            "athletes": 4
+        },
+        {
+            "noc": "India",
+            "athletes": 2
+        },
+        {
+            "noc": "Individual Neutral Athletes",
+            "athletes": 20
+        },
+        {
+            "noc": "Iran",
+            "athletes": 4
+        },
+        {
+            "noc": "Ireland",
+            "athletes": 4
+        },
+        {
+            "noc": "Israel",
+            "athletes": 10
+        },
+        {
+            "noc": "Italy (host)",
+            "athletes": 196
+        },
+        {
+            "noc": "Jamaica",
+            "athletes": 7
+        },
+        {
+            "noc": "Japan",
+            "athletes": 120
+        },
+        {
+            "noc": "Kazakhstan",
+            "athletes": 36
+        },
+        {
+            "noc": "Kenya",
+            "athletes": 2
+        },
+        {
+            "noc": "South Korea",
+            "athletes": 71
+        },
+        {
+            "noc": "Kosovo",
+            "athletes": 2
+        },
+        {
+            "noc": "Kyrgyzstan",
+            "athletes": 2
+        },
+        {
+            "noc": "Latvia",
+            "athletes": 68
+        },
+        {
+            "noc": "Lebanon",
+            "athletes": 2
+        },
+        {
+            "noc": "Liechtenstein",
+            "athletes": 8
+        },
+        {
+            "noc": "Lithuania",
+            "athletes": 17
+        },
+        {
+            "noc": "Luxembourg",
+            "athletes": 2
+        },
+        {
+            "noc": "Madagascar",
+            "athletes": 2
+        },
+        {
+            "noc": "Malaysia",
+            "athletes": 1
+        },
+        {
+            "noc": "Malta",
+            "athletes": 1
+        },
+        {
+            "noc": "Mexico",
+            "athletes": 5
+        },
+        {
+            "noc": "Moldova",
+            "athletes": 5
+        },
+        {
+            "noc": "Monaco",
+            "athletes": 1
+        },
+        {
+            "noc": "Mongolia",
+            "athletes": 3
+        },
+        {
+            "noc": "Montenegro",
+            "athletes": 2
+        },
+        {
+            "noc": "Morocco",
+            "athletes": 2
+        },
+        {
+            "noc": "Netherlands",
+            "athletes": 39
+        },
+        {
+            "noc": "New Zealand",
+            "athletes": 17
+        },
+        {
+            "noc": "Nigeria",
+            "athletes": 1
+        },
+        {
+            "noc": "North Macedonia",
+            "athletes": 4
+        },
+        {
+            "noc": "Norway",
+            "athletes": 80
+        },
+        {
+            "noc": "Pakistan",
+            "athletes": 1
+        },
+        {
+            "noc": "Philippines",
+            "athletes": 2
+        },
+        {
+            "noc": "Poland",
+            "athletes": 60
+        },
+        {
+            "noc": "Portugal",
+            "athletes": 3
+        },
+        {
+            "noc": "Puerto Rico",
+            "athletes": 1
+        },
+        {
+            "noc": "Romania",
+            "athletes": 29
+        },
+        {
+            "noc": "San Marino",
+            "athletes": 1
+        },
+        {
+            "noc": "Saudi Arabia",
+            "athletes": 2
+        },
+        {
+            "noc": "Serbia",
+            "athletes": 3
+        },
+        {
+            "noc": "Singapore",
+            "athletes": 1
+        },
+        {
+            "noc": "Slovakia",
+            "athletes": 53
+        },
+        {
+            "noc": "Slovenia",
+            "athletes": 37
+        },
+        {
+            "noc": "South Africa",
+            "athletes": 5
+        },
+        {
+            "noc": "Spain",
+            "athletes": 20
+        },
+        {
+            "noc": "Sweden",
+            "athletes": 110
+        },
+        {
+            "noc": "Switzerland",
+            "athletes": 175
+        },
+        {
+            "noc": "Chinese Taipei",
+            "athletes": 9
+        },
+        {
+            "noc": "Thailand",
+            "athletes": 3
+        },
+        {
+            "noc": "Trinidad and Tobago",
+            "athletes": 6
+        },
+        {
+            "noc": "Turkey",
+            "athletes": 8
+        },
+        {
+            "noc": "Ukraine",
+            "athletes": 46
+        },
+        {
+            "noc": "United Arab Emirates",
+            "athletes": 2
+        },
+        {
+            "noc": "United States",
+            "athletes": 233
+        },
+        {
+            "noc": "Uruguay",
+            "athletes": 1
+        },
+        {
+            "noc": "Uzbekistan",
+            "athletes": 2
+        },
+        {
+            "noc": "Venezuela",
+            "athletes": 1
+        }
+    ]
+}

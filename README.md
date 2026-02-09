@@ -67,9 +67,9 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add a guess counter
 - [ ] Add difficulty game modes, e.g. Hard mode: hide gold/silver/bronze breakdown
 - [x] Confetti on all wins
-- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Richer share text — include direction emoji and distance per guess line
 - [ ] Random guess for if the user doesn't know where to start
+- [ ] Easy mode by default with nations that have more than x amount of medals, toggle for hard mode in settings
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in
@@ -78,15 +78,17 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 ### Must-have features before go-live
 - [x] Update shareable results to include hints used
-- [ ] Easy mode by default with nations that have more than x amount of medals, toggle for hard mode in settings
 - [x] Hints to make the game easier
-- [ ] Random guess
 - [x] Unit tests
 - [x] Show the how to play pop-up by default
 - [x] Open Graph meta tags — title, description, and preview image for social sharing
-- [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
-- [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings. Maybe try 32/44/71 RGB here?
+- [x] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings. Maybe try 32/44/71 RGB here?
 - [ ] Winter Olympics mode by default — set winter mode for first-time visitors with a dismissible banner, returning players keep their preference
+- [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
 - [ ] Add a form for people to give feedback
+
+### Nice to have features before go-live
 - [ ] Make mobile-friendly
 - [ ] Link to the wiki pages for x country at the olympics
+- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
+- [ ] Random guess
