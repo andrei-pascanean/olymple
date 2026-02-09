@@ -184,6 +184,50 @@
         .hint-card-inner.hint-flipped {
             animation: hint-flip 0.5s ease-out forwards;
         }
+
+        /* Dark mode overrides */
+        [data-bs-theme="dark"] body {
+            background-color: #202C47;
+        }
+
+        [data-bs-theme="dark"] .hint-locked {
+            background-color: #2a3a5c;
+            border-color: #3a4a6c;
+        }
+
+        [data-bs-theme="dark"] .hint-locked .hint-label {
+            color: #8899aa;
+        }
+
+        [data-bs-theme="dark"] .hint-unlocked {
+            background-color: #3d3a20;
+            border-color: #ffc107;
+        }
+
+        [data-bs-theme="dark"] .hint-unlocked:hover {
+            background-color: #4d4a28;
+        }
+
+        [data-bs-theme="dark"] .hint-unlocked .hint-label {
+            color: #ffd54f;
+        }
+
+        [data-bs-theme="dark"] .hint-unlocked .hint-tap-text {
+            color: #ffca28;
+        }
+
+        [data-bs-theme="dark"] .hint-revealed {
+            background-color: #1a3a2a;
+            border-color: #198754;
+        }
+
+        [data-bs-theme="dark"] .hint-revealed .hint-value {
+            color: #75d4a0;
+        }
+
+        [data-bs-theme="dark"] .hint-revealed .hint-label {
+            color: #4caf7a;
+        }
     </style>
 </head>
 
@@ -309,6 +353,15 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="winterModeToggle">
                     <label class="form-check-label" for="winterModeToggle">❄️ Winter Mode</label>
                     <div class="form-text">Only countries with winter medals</div>
+                </div>
+                <hr>
+                <div class="mb-3">
+                    <h6>Appearance</h6>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="darkModeToggle">
+                    <label class="form-check-label" for="darkModeToggle">🌙 Dark Mode</label>
+                    <div class="form-text">Auto-detected from system preference</div>
                 </div>
                 <hr>
                 <p class="text-muted small mb-0">Note: Changing modes will start a new puzzle for today.</p>
@@ -497,6 +550,20 @@
 
             function setGameMode(mode) {
                 localStorage.setItem('olympleGameMode', mode);
+            }
+
+            function getDarkMode() {
+                const stored = localStorage.getItem('olympleDarkMode');
+                if (stored !== null) return stored === 'true';
+                return window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+
+            function setDarkMode(enabled) {
+                localStorage.setItem('olympleDarkMode', enabled ? 'true' : 'false');
+            }
+
+            function applyDarkMode(enabled) {
+                document.documentElement.setAttribute('data-bs-theme', enabled ? 'dark' : 'light');
             }
 
             // Name overrides: medal JSON name -> centroid JSON name
@@ -1238,6 +1305,8 @@
                 });
             }
 
+            applyDarkMode(getDarkMode());
+
             init();
 
             // --- Settings toggle logic ---
@@ -1275,6 +1344,14 @@
                         setGameMode('default');
                     }
                     location.reload();
+                });
+
+                const darkToggle = document.getElementById('darkModeToggle');
+                darkToggle.checked = getDarkMode();
+
+                darkToggle.addEventListener('change', function () {
+                    setDarkMode(this.checked);
+                    applyDarkMode(this.checked);
                 });
             })();
         </script>

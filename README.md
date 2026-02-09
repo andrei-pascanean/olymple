@@ -81,7 +81,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Easy mode by default with nations that have more than x amount of medals, toggle for hard mode in settings
 - [x] Hints to make the game easier
 - [ ] Random guess
-- [ ] Unit tests
+- [x] Unit tests
 - [x] Show the how to play pop-up by default
 - [x] Open Graph meta tags — title, description, and preview image for social sharing
 - [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
