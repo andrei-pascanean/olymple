@@ -32,6 +32,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <script type="module" defer>
+        import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+        polyfillCountryFlagEmojis();
+    </script>
     <style>
         @keyframes guess-flip {
             0% {
@@ -231,7 +235,7 @@
     </style>
 </head>
 
-<body>
+<body style="font-family: 'Twemoji Country Flags', system-ui, -apple-system, sans-serif;">
     <div class="container" id="mainContainer" style="touch-action: manipulation;">
         <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
