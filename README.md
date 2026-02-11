@@ -49,6 +49,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 - [ ] Show puzzle number (#gameId) in header during gameplay
 - [ ] Show remaining guesses with dashed outline
+- [ ] Make more mobile-friendly
 
 ### Accessibility & compatibility
 
@@ -86,11 +87,10 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add a form for people to give feedback
 
 ### Nice to have features before go-live
-- [ ] Make mobile-friendly
 - [ ] Link to the wiki pages for x country at the olympics
 - [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Random guess
-- [ ] Ads/buy me a coffee
+- [ ] Buy me a coffee
 - [ ] Link to my profile
 
 ## Roadmap
