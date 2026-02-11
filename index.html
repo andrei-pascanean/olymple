@@ -234,8 +234,32 @@
             color: #4caf7a;
         }
 
+        .btn-wiki {
+            color: #0d6efd;
+            border-color: #0d6efd;
+            background-color: transparent;
+        }
+
+        .btn-wiki:hover {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        [data-bs-theme="dark"] .btn-wiki {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        [data-bs-theme="dark"] .btn-wiki:hover {
+            color: #000;
+            background-color: #fff;
+            border-color: #fff;
+        }
+
         /* Fix backdrop not covering full viewport due to body zoom */
-        .offcanvas-backdrop, .modal-backdrop {
+        .offcanvas-backdrop,
+        .modal-backdrop {
             width: calc(100vw / 0.8) !important;
             height: calc(100vh / 0.8) !important;
             top: 0 !important;
@@ -529,15 +553,17 @@
 
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6 mx-auto text-center text-muted small mt-4 mb-3">
-            <p>Olymple has been inspired by
-                <a href="https://oec.world/en/tradle" target="_blank" rel="noopener">Tradle</a> created by
-                <a href="https://twitter.com/oaborras" target="_blank" rel="noopener">@oaborras</a>,
-                <a href="https://worldle.teuteuf.fr" target="_blank" rel="noopener">Worldle</a> created by
-                <a href="https://twitter.com/teuteuf" target="_blank" rel="noopener">@teuteuf</a>, and
-                <a href="https://www.nytimes.com/games/wordle" target="_blank" rel="noopener">Wordle</a> created by
-                Josh Wardle (<a href="https://twitter.com/powerlanguish" target="_blank" rel="noopener">@powerlanguish</a>).
-            </p>
-            <p>Made by <a href="https://twitter.com/andreipascanean" target="_blank" rel="noopener">@andreipascanean</a>.</p>
+                <p>Olymple has been inspired by
+                    <a href="https://oec.world/en/tradle" target="_blank" rel="noopener">Tradle</a> created by
+                    <a href="https://twitter.com/oaborras" target="_blank" rel="noopener">@oaborras</a>,
+                    <a href="https://worldle.teuteuf.fr" target="_blank" rel="noopener">Worldle</a> created by
+                    <a href="https://twitter.com/teuteuf" target="_blank" rel="noopener">@teuteuf</a>, and
+                    <a href="https://www.nytimes.com/games/wordle" target="_blank" rel="noopener">Wordle</a> created by
+                    Josh Wardle (<a href="https://twitter.com/powerlanguish" target="_blank"
+                        rel="noopener">@powerlanguish</a>).
+                </p>
+                <p>Made by <a href="https://twitter.com/andreipascanean" target="_blank"
+                        rel="noopener">@andreipascanean</a>.</p>
             </div>
         </div>
 
@@ -982,7 +1008,7 @@
                                 button.classList.add('btn-success');
                                 button.textContent = "Shared!";
                             })
-                            .catch(() => {});
+                            .catch(() => { });
                     } else {
                         navigator.clipboard.writeText(shareText)
                             .then(() => {
@@ -1228,6 +1254,8 @@
                     shareButton.id = "shareButton";
                     endGameModalBody.appendChild(shareButton);
 
+                    const wikiUrl = `https://en.wikipedia.org/wiki/${correctName.replace(/ /g, '_')}_at_the_Olympics`;
+
                     const share_button_placeholder = document.getElementById("share_button_placeholder");
                     if (!document.getElementById("globalShareButton")) {
                         const shareBtnCol = document.createElement("div");
@@ -1258,6 +1286,19 @@
                             globalConfettiCol.appendChild(globalConfettiBtn);
                             share_button_placeholder.appendChild(globalConfettiCol);
                         }
+
+                        const globalWikiCol = document.createElement("div");
+                        globalWikiCol.className = "col-12 mt-1";
+
+                        const globalWikiLink = document.createElement("a");
+                        globalWikiLink.href = wikiUrl;
+                        globalWikiLink.target = "_blank";
+                        globalWikiLink.rel = "noopener";
+                        globalWikiLink.className = "form-control form-control btn btn-wiki text-center";
+                        globalWikiLink.textContent = `Learn more about ${correctFlag} ${correctName} at the Olympics`;
+
+                        globalWikiCol.appendChild(globalWikiLink);
+                        share_button_placeholder.appendChild(globalWikiCol);
                     }
 
                     endGameModal.show();

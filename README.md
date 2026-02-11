@@ -14,7 +14,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Default view is too zoomed in on PC and too zoomed out on mobile
 - [x] I should be able to select any country on earth, even those with no medals
 - [x] I should be able to press enter after typing in the country to guess
-- [ ] When typing a country out fully, the country from the drop-down should auto-fill into the search bar
+- [x] When typing a country out fully, the country from the drop-down should auto-fill into the search bar
 
 ## Completed features
 
@@ -75,8 +75,8 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
 
 ### Nice to have features
-- [ ] Link to the wiki pages for x country at the olympics
-- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
+- [x] Link to the wiki pages for x country at the olympics
+- [x] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [x] Link to my profile
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 - [ ] Add a themed background
@@ -85,11 +85,6 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 ### Core Game Enhancements
 - [ ] Persistent stats & streaks — win rate, guess distribution histogram, current/max streak in localStorage
-- [ ] Countdown timer to next daily puzzle after completing today's game
-- [ ] Random guess button for when users don't know where to start
-- [ ] Show remaining guesses as empty dashed-outline slots
-- [ ] Richer share text — include direction arrows and distance for each guess line
-- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Hard mode — hide gold/silver/bronze breakdown, show only total medals per sport
 - [ ] Easy mode — only countries with 50+ total medals
 - [ ] Historical nations (Soviet Union, Yugoslavia, East/West Germany, etc.)
@@ -101,10 +96,8 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Global leaderboard — average guesses to solve, streaks
 - [ ] Daily/weekly challenges with themed constraints (e.g. "only Asian countries this week")
 - [ ] Achievement badges (first win, 7-day streak, guessed in 1, completed all modes)
-- [ ] Feedback form / feature request board
 - [ ] Blog/changelog page showing new features and daily fun facts
 - [ ] Social sharing previews with personalized result images (OG image with your score)
-- [ ] Link to Wikipedia "[Country] at the Olympics" page after game ends
 - [ ] Notification system (browser push) for daily puzzle reminders
 - [ ] Multiplayer mode — real-time race against a friend with shared link
 - [ ] "Olymple of the Day" social media auto-posting bot
