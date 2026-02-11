@@ -968,17 +968,29 @@
                     const modeSuffix = gameMode === 'summer' ? ' ☀️' : gameMode === 'winter2026' ? ' 🏔️' : '';
                     const hintsUsed = hintsRevealed.filter(Boolean).length;
                     const hintsSuffix = hintsUsed > 0 ? ` | 💡 ${hintsUsed}/3` : '';
-                    const clipBoardText = [
+                    const shareText = [
                         `#DailyOlymple${modeSuffix} #${gameId} ${guesses}/5${hintsSuffix}`,
                         performances.join("\n"),
                         "https://www.olymple.com"
                     ].join("\n");
-                    navigator.clipboard.writeText(clipBoardText)
-                        .then(() => {
-                            button.classList.remove('btn-primary');
-                            button.classList.add('btn-success');
-                            button.textContent = "Copied to clipboard!";
-                        });
+
+                    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                    if (navigator.share && isMobile) {
+                        navigator.share({ text: shareText })
+                            .then(() => {
+                                button.classList.remove('btn-primary');
+                                button.classList.add('btn-success');
+                                button.textContent = "Shared!";
+                            })
+                            .catch(() => {});
+                    } else {
+                        navigator.clipboard.writeText(shareText)
+                            .then(() => {
+                                button.classList.remove('btn-primary');
+                                button.classList.add('btn-success');
+                                button.textContent = "Copied to clipboard!";
+                            });
+                    }
                 }
 
                 function saveGameState() {
