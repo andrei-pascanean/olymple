@@ -14,6 +14,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Default view is too zoomed in on PC and too zoomed out on mobile
 - [x] I should be able to select any country on earth, even those with no medals
 - [x] I should be able to press enter after typing in the country to guess
+- [ ] When typing a country out fully, the country from the drop-down should auto-fill into the search bar
 
 ## Completed features
 
@@ -46,15 +47,12 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Add reveal animation when showing guess performance
 - [x] Persist game state in localStorage so refreshing doesn't reset progress
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
-- [ ] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings
 - [ ] Show puzzle number (#gameId) in header during gameplay
 - [ ] Show remaining guesses with dashed outline
 
 ### Accessibility & compatibility
 
-- [ ] Add proper meta tags (Open Graph, description) for link previews when sharing
-- [ ] Test and fix cross-browser compatibility (Safari, Firefox, Chrome)
-- [ ] Ensure full keyboard navigation support
+- [x] Test and fix cross-browser compatibility (Safari, Firefox, Chrome)
 
 ## Feature ideas
 
@@ -94,3 +92,50 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Random guess
 - [ ] Ads/buy me a coffee
 - [ ] Link to my profile
+
+## Roadmap
+
+### Core Game Enhancements
+- [ ] Persistent stats & streaks — win rate, guess distribution histogram, current/max streak in localStorage
+- [ ] Countdown timer to next daily puzzle after completing today's game
+- [ ] Random guess button for when users don't know where to start
+- [ ] Show remaining guesses as empty dashed-outline slots
+- [ ] Richer share text — include direction arrows and distance for each guess line
+- [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
+- [ ] Hard mode — hide gold/silver/bronze breakdown, show only total medals per sport
+- [ ] Easy mode — only countries with 50+ total medals
+- [ ] Historical nations (Soviet Union, Yugoslavia, East/West Germany, etc.)
+- [ ] Olympic fun facts shown about the daily country after game ends
+
+### Website & Engagement
+- [ ] Landing page with game selector (Olymple + future games)
+- [ ] User accounts with login (Google/Apple) to sync stats across devices
+- [ ] Global leaderboard — average guesses to solve, streaks
+- [ ] Daily/weekly challenges with themed constraints (e.g. "only Asian countries this week")
+- [ ] Achievement badges (first win, 7-day streak, guessed in 1, completed all modes)
+- [ ] Feedback form / feature request board
+- [ ] Blog/changelog page showing new features and daily fun facts
+- [ ] Social sharing previews with personalized result images (OG image with your score)
+- [ ] Link to Wikipedia "[Country] at the Olympics" page after game ends
+- [ ] Notification system (browser push) for daily puzzle reminders
+- [ ] Multiplayer mode — real-time race against a friend with shared link
+- [ ] "Olymple of the Day" social media auto-posting bot
+
+### Companion Pages
+- [ ] **Olympic Medal Explorer** — interactive searchable/sortable table of all medal data, filter by country/sport/year
+- [ ] **Country Comparison Tool** — select 2-3 countries and see head-to-head medal stats with charts
+- [ ] **Olympic Map** — world map visualization colored by medal counts, clickable countries
+- [ ] **"Did You Know?"** — daily rotating Olympic trivia/facts page
+- [ ] **Milano Cortina 2026 Hub** — schedule, participating countries, medal predictions, countdown
+
+### Monetization Approaches
+- [ ] **Ko-fi / Buy Me a Coffee** — simple donation button, zero friction to set up
+- [ ] **Tasteful display ads** — single banner ad below the game area (Google AdSense or Carbon Ads)
+- [ ] **Premium "Pro" mode** — $2/month for unlimited hints, ad-free, exclusive hard modes, stat exports, custom themes
+- [ ] **Sponsored daily puzzles** — partner with Olympic committees / sports brands for specific days
+- [ ] **Merch store** — Olymple-branded t-shirts, mugs, stickers via print-on-demand (Printful/Shopify)
+- [ ] **Affiliate links** — link to Olympic documentaries, books, or streaming events
+- [ ] **API/widget licensing** — license the game as an embeddable widget for sports news sites
+- [ ] **Browser extension** — daily Olymple puzzle in a new-tab extension with optional premium features
+- [ ] **Seasonal event packs** — paid themed puzzle packs around major events (Summer Games, Winter Games)
+- [ ] **Newsletter with sponsors** — weekly Olympic trivia newsletter with sponsor spots, driving traffic back to the game
