@@ -92,3 +92,5 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Link to the wiki pages for x country at the olympics
 - [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Random guess
+- [ ] Ads/buy me a coffee
+- [ ] Link to my profile
