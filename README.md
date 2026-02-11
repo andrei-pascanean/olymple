@@ -34,7 +34,6 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 ### Code quality
 
-- [ ] Separate JS and CSS into external files
 - [x] Move from inline `onclick` handlers to `addEventListener`
 - [x] Audit `const` vs `let` usage throughout
 - [x] Add input sanitization and basic error handling
@@ -43,13 +42,8 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 
 - [x] Make the correct guess show up in gold
 - [x] Add "How to Play" instructions modal
-- [ ] Add a themed background
 - [x] Add reveal animation when showing guess performance
 - [x] Persist game state in localStorage so refreshing doesn't reset progress
-- [ ] Show a countdown timer to the next daily puzzle after completing today's game
-- [ ] Show puzzle number (#gameId) in header during gameplay
-- [ ] Show remaining guesses with dashed outline
-- [ ] Make more mobile-friendly
 
 ### Accessibility & compatibility
 
@@ -61,14 +55,9 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [ ] Add the option of guessing countries that no longer exist (e.g. Soviet Union, Yugoslavia)
 - [ ] Show interesting Olympic facts about the daily country after the game ends
 - [ ] Add a streak counter for consecutive days played
-- [ ] Persistent stats — win rate, guess distribution histogram, current/max streak in localStorage
-- [ ] Hint system: reveal the continent or first letter after N wrong guesses
-- [ ] Add a guess counter
 - [ ] Add difficulty game modes, e.g. Hard mode: hide gold/silver/bronze breakdown
 - [x] Confetti on all wins
-- [ ] Richer share text — include direction emoji and distance per guess line
 - [ ] Random guess for if the user doesn't know where to start
-- [ ] Easy mode by default with nations that have more than x amount of medals, toggle for hard mode in settings
 
 ### Social & engagement
 - [ ] Add ability to track games by logging in
@@ -84,14 +73,17 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings. Maybe try 32/44/71 RGB here?
 - [x] Winter Olympics mode by default — set winter mode for first-time visitors with a dismissible banner, returning players keep their preference
 - [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
-- [ ] Add a form for people to give feedback
 
-### Nice to have features before go-live
+### Nice to have features
 - [ ] Link to the wiki pages for x country at the olympics
 - [ ] Web Share API — use `navigator.share()` on mobile, fall back to clipboard on desktop
 - [ ] Random guess
-- [ ] Buy me a coffee
-- [ ] Link to my profile
+- [x] Link to my profile
+- [ ] Show a countdown timer to the next daily puzzle after completing today's game
+- [ ] Show puzzle number (#gameId) in header during gameplay
+- [ ] Show remaining guesses with dashed outline
+- [ ] Make more mobile-friendly
+- [ ] Add a themed background
 
 ## Roadmap
 

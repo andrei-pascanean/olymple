@@ -1267,9 +1267,16 @@
                     const errorToast = bootstrap.Toast.getOrCreateInstance(errorToastEl);
 
                     if (!country_data[input.value]) {
-                        errorToastBody.textContent = "Please select a valid country from the list!";
-                        errorToast.show();
-                        return;
+                        const lower = input.value.toLowerCase();
+                        const matches = countries.filter(c => c.toLowerCase().includes(lower));
+                        if (lower && matches.length === 1) {
+                            input.value = matches[0];
+                            autocompleteList.style.display = 'none';
+                        } else {
+                            errorToastBody.textContent = "Please select a valid country from the list!";
+                            errorToast.show();
+                            return;
+                        }
                     }
 
                     if (guessedCountries.has(input.value)) {
