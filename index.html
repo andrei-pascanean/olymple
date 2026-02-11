@@ -232,6 +232,14 @@
         [data-bs-theme="dark"] .hint-revealed .hint-label {
             color: #4caf7a;
         }
+
+        /* Fix backdrop not covering full viewport due to body zoom */
+        .offcanvas-backdrop, .modal-backdrop {
+            width: calc(100vw / 0.8) !important;
+            height: calc(100vh / 0.8) !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
     </style>
 </head>
 
