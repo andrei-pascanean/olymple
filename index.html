@@ -257,6 +257,20 @@
             border-color: #fff;
         }
 
+        /* Stats distribution bars */
+        .stats-bar-container {
+            flex: 1;
+            height: 28px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .stats-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
         /* Fix backdrop not covering full viewport due to body zoom */
         .offcanvas-backdrop,
         .modal-backdrop {
@@ -281,6 +295,21 @@
                             <div class="col text-center">
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="statsModalLabel">Statistics</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="statsModalBody">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -414,6 +443,11 @@
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                         <path
                             d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5; margin-left: 10px;" id="statsButton"
+                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
                     </svg>
                     <span class="mx-2" id="gameTitle">Daily Olymple</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -754,6 +788,175 @@
                 }
 
                 animate();
+            }
+
+            // --- Stats & Streaks ---
+            function defaultStats() {
+                return {
+                    gamesPlayed: 0,
+                    gamesWon: 0,
+                    currentStreak: 0,
+                    maxStreak: 0,
+                    lastPlayedDate: null,
+                    lastPlayResult: null,
+                    lastStartedDate: null,
+                    guessDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, X: 0 }
+                };
+            }
+
+            function loadStats(mode) {
+                try {
+                    const raw = localStorage.getItem('olympleStats-' + mode);
+                    if (!raw) return defaultStats();
+                    return JSON.parse(raw);
+                } catch (e) {
+                    return defaultStats();
+                }
+            }
+
+            function saveStats(mode, stats) {
+                try {
+                    localStorage.setItem('olympleStats-' + mode, JSON.stringify(stats));
+                } catch (e) { }
+            }
+
+            function getYesterdayStr(dateStr) {
+                const d = new Date(dateStr + 'T12:00:00');
+                d.setDate(d.getDate() - 1);
+                return d.getFullYear() + '-' +
+                    String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                    String(d.getDate()).padStart(2, '0');
+            }
+
+            function recordGameStarted(mode, dateStr) {
+                const stats = loadStats(mode);
+                if (stats.lastStartedDate === dateStr) return;
+                stats.lastStartedDate = dateStr;
+                saveStats(mode, stats);
+            }
+
+            function updateStats(mode, didWin, numGuesses, dateStr) {
+                const stats = loadStats(mode);
+
+                // Prevent double-recording for the same day
+                if (stats.lastPlayedDate === dateStr) return stats;
+
+                stats.gamesPlayed += 1;
+                if (didWin) {
+                    stats.gamesWon += 1;
+                    stats.guessDistribution[numGuesses] = (stats.guessDistribution[numGuesses] || 0) + 1;
+                } else {
+                    stats.guessDistribution['X'] = (stats.guessDistribution['X'] || 0) + 1;
+                }
+
+                // Streak logic
+                const yesterday = getYesterdayStr(dateStr);
+                if (didWin) {
+                    const hadActivityYesterday =
+                        (stats.lastPlayedDate === yesterday && stats.lastPlayResult === 'win') ||
+                        stats.lastStartedDate === yesterday;
+                    stats.currentStreak = hadActivityYesterday ? stats.currentStreak + 1 : 1;
+                } else {
+                    stats.currentStreak = 0;
+                }
+
+                if (stats.currentStreak > stats.maxStreak) {
+                    stats.maxStreak = stats.currentStreak;
+                }
+
+                stats.lastPlayedDate = dateStr;
+                stats.lastPlayResult = didWin ? 'win' : 'loss';
+                saveStats(mode, stats);
+                return stats;
+            }
+
+            function getWinPercentage(stats) {
+                if (stats.gamesPlayed === 0) return 0;
+                return Math.round((stats.gamesWon / stats.gamesPlayed) * 100);
+            }
+
+            function renderStatsInto(container, stats, highlightGuess) {
+                container.innerHTML = '';
+
+                // Summary grid
+                const grid = document.createElement('div');
+                grid.className = 'row text-center mb-4';
+                [
+                    { label: 'Played', value: stats.gamesPlayed },
+                    { label: 'Win %', value: getWinPercentage(stats) },
+                    { label: 'Current Streak', value: stats.currentStreak },
+                    { label: 'Max Streak', value: stats.maxStreak }
+                ].forEach(item => {
+                    const col = document.createElement('div');
+                    col.className = 'col-3';
+                    col.innerHTML = '<div class="fs-2 fw-bold">' + item.value + '</div>' +
+                        '<div class="text-muted small">' + item.label + '</div>';
+                    grid.appendChild(col);
+                });
+                container.appendChild(grid);
+
+                // Guess distribution
+                const title = document.createElement('h6');
+                title.textContent = 'Guess Distribution';
+                title.className = 'mb-3';
+                container.appendChild(title);
+
+                const keys = [1, 2, 3, 4, 5, 'X'];
+                const maxCount = Math.max(...keys.map(k => stats.guessDistribution[k] || 0), 1);
+                const totalGames = stats.gamesPlayed;
+
+                keys.forEach(function (key) {
+                    const count = stats.guessDistribution[key] || 0;
+                    const barPct = maxCount > 0 ? (count / maxCount) * 100 : 0;
+                    const gamePct = totalGames > 0 ? Math.round((count / totalGames) * 100) : 0;
+                    const isLossRow = key === 'X';
+                    const isHighlighted = highlightGuess === key;
+
+                    const row = document.createElement('div');
+                    row.className = 'd-flex align-items-center mb-2';
+
+                    const label = document.createElement('div');
+                    label.style.cssText = 'width: 24px; text-align: right; margin-right: 8px; font-size: 0.95rem;';
+                    label.textContent = isLossRow ? '❌' : key;
+
+                    const barContainer = document.createElement('div');
+                    barContainer.className = 'stats-bar-container';
+
+                    const bar = document.createElement('div');
+                    bar.className = 'stats-bar';
+                    bar.style.width = count > 0 ? Math.max(barPct, 8) + '%' : '0%';
+
+                    if (isHighlighted) {
+                        bar.style.backgroundColor = isLossRow ? '#dc3545' : '#198754';
+                    } else {
+                        bar.style.backgroundColor = count > 0 ? '#6c757d' : 'transparent';
+                    }
+
+                    barContainer.appendChild(bar);
+
+                    const valLabel = document.createElement('div');
+                    valLabel.style.cssText = 'font-size: 0.85rem; font-weight: bold; white-space: nowrap;';
+                    valLabel.textContent = count + (totalGames > 0 ? ' (' + gamePct + '%)' : '');
+
+                    if (count > 0) {
+                        valLabel.style.marginLeft = '8px';
+                        row.appendChild(label);
+                        row.appendChild(barContainer);
+                        row.appendChild(valLabel);
+                    } else {
+                        row.appendChild(label);
+                        row.appendChild(valLabel);
+                    }
+                    container.appendChild(row);
+                });
+            }
+
+            function showStatsModal(mode) {
+                const stats = loadStats(mode);
+                const body = document.getElementById('statsModalBody');
+                renderStatsInto(body, stats);
+                const modal = new bootstrap.Modal(document.getElementById('statsModal'));
+                modal.show();
             }
 
             function renderTable(tbodyId, sports) {
@@ -1218,6 +1421,9 @@
                 }
 
                 function showEndGame(didWin) {
+                    // Update stats
+                    const updatedStats = updateStats(gameMode, didWin, guesses, getDateString());
+
                     const correctAnswerToastEl = document.getElementById("liveCorrectAnswerToast");
                     const correctAnswerToastMessage = document.getElementById("liveCorrectAnswerToastMessage");
                     correctAnswerToastMessage.textContent = `The correct answer was: ${correct_country}`;
@@ -1253,6 +1459,13 @@
                     shareButton.textContent = "Share";
                     shareButton.id = "shareButton";
                     endGameModalBody.appendChild(shareButton);
+
+                    // Full stats (summary + guess distribution)
+                    const statsContainer = document.createElement('div');
+                    statsContainer.className = 'mb-3';
+                    statsContainer.id = 'endGameStatsContainer';
+                    endGameModalBody.appendChild(statsContainer);
+                    renderStatsInto(statsContainer, updatedStats, didWin ? guesses : 'X');
 
                     const wikiUrl = `https://en.wikipedia.org/wiki/${correctName.replace(/ /g, '_')}_at_the_Olympics`;
 
@@ -1338,6 +1551,10 @@
                         return;
                     }
 
+                    if (guesses === 0) {
+                        recordGameStarted(gameMode, getDateString());
+                    }
+
                     guessedCountries.add(input.value);
                     guesses = guesses + 1;
 
@@ -1415,8 +1632,16 @@
                         renderHints();
 
                         if (completed) {
+                            // Migration: record stats if not yet tracked for today
+                            const currentStats = loadStats(gameMode);
+                            if (currentStats.lastPlayedDate !== getDateString()) {
+                                updateStats(gameMode, won, guesses, getDateString());
+                            }
                             document.getElementById("guess-button").disabled = true;
                             showEndGame(won);
+                        } else if (guesses > 0) {
+                            // Game started but not completed — preserve streak
+                            recordGameStarted(gameMode, getDateString());
                         }
                     }
                 } catch (e) {
@@ -1433,6 +1658,11 @@
                 renderHints();
 
                 document.getElementById("guess-button").onclick = handleGuess;
+
+                // Stats button
+                document.getElementById("statsButton").addEventListener('click', function () {
+                    showStatsModal(gameMode);
+                });
 
                 input.addEventListener('keydown', (e) => {
                     const items = autocompleteList.querySelectorAll('.list-group-item');
