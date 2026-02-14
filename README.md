@@ -15,6 +15,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] I should be able to select any country on earth, even those with no medals
 - [x] I should be able to press enter after typing in the country to guess
 - [x] When typing a country out fully, the country from the drop-down should auto-fill into the search bar
+- [ ] Puzzle rollover uses UTC midnight (not local midnight) — the epoch (`new Date('2025-01-01')`) is parsed as UTC, so puzzles change at 01:00 CET, 02:00 EET, etc. `getDateString()` was patched to also use UTC for consistency, but ideally both should use local time so puzzles roll over at local midnight for all players. Deferred until after the 2026 Winter Olympics to avoid disrupting existing puzzle assignments mid-event.
 
 ## Completed features
 
