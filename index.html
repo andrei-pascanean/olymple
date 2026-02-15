@@ -32,6 +32,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDca8aS8MvHSwXRPKPl-TohZJg8pkSdB08",
+            authDomain: "olymple.firebaseapp.com",
+            projectId: "olymple",
+            storageBucket: "olymple.firebasestorage.app",
+            messagingSenderId: "883195869177",
+            appId: "1:883195869177:web:e0461e9efa9babf8706f28",
+            measurementId: "G-5LG9HX8J8R"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const fbAuth = firebase.auth();
+        const fbDb = firebase.firestore();
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script type="module" defer>
         import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
@@ -430,6 +448,35 @@
                     <div class="form-text">Auto-detected from system preference</div>
                 </div>
                 <hr>
+                <div class="mb-3">
+                    <h6>Account</h6>
+                </div>
+                <div id="accountSection">
+                    <div id="accountSignedOut">
+                        <p class="text-muted small">Sign in to sync your stats across devices.</p>
+                        <button class="btn btn-outline-primary w-100" id="googleSignInBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" style="vertical-align: text-bottom; margin-right: 8px;">
+                                <path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                                <path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                                <path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.0 24.0 0 0 0 0 21.56l7.98-6.19z"/>
+                                <path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                            </svg>
+                            Sign in with Google
+                        </button>
+                    </div>
+                    <div id="accountSignedIn" style="display: none;">
+                        <div class="d-flex align-items-center mb-3">
+                            <img id="accountAvatar" src="" alt="" width="40" height="40" style="border-radius: 50%; margin-right: 12px;">
+                            <div>
+                                <div class="fw-bold" id="accountName"></div>
+                                <div class="text-muted small" id="accountEmail"></div>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-2">Stats synced to cloud</p>
+                        <button class="btn btn-outline-secondary w-100" id="signOutBtn">Sign out</button>
+                    </div>
+                </div>
+                <hr>
                 <p class="text-muted small mb-0">Note: Changing modes will start a new puzzle for today.</p>
             </div>
         </div>
@@ -450,6 +497,17 @@
                         <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
                     </svg>
                     <span class="mx-2" id="gameTitle">Daily Olymple</span>
+                    <!-- Login/Avatar button -->
+                    <span id="loginButton" style="cursor: pointer; opacity: 0.5; margin-right: 10px;"
+                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" id="loginIconSvg">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        <img id="loginAvatarImg" src="" alt="" width="24" height="24"
+                            style="border-radius: 50%; display: none;">
+                    </span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         viewBox="0 0 16 16" style="cursor: pointer; opacity: 0.5;" data-bs-toggle="offcanvas"
                         data-bs-target="#settingsOffcanvas" onmouseover="this.style.opacity='1'"
@@ -790,6 +848,167 @@
                 animate();
             }
 
+            // --- Auth & Firestore Sync ---
+            let currentUser = null;
+
+            function updateAuthUI(user) {
+                const loginIconSvg = document.getElementById('loginIconSvg');
+                const loginAvatarImg = document.getElementById('loginAvatarImg');
+                const accountSignedOut = document.getElementById('accountSignedOut');
+                const accountSignedIn = document.getElementById('accountSignedIn');
+
+                if (user) {
+                    loginIconSvg.style.display = 'none';
+                    loginAvatarImg.src = user.photoURL || '';
+                    loginAvatarImg.style.display = user.photoURL ? '' : 'none';
+                    if (!user.photoURL) loginIconSvg.style.display = '';
+
+                    accountSignedOut.style.display = 'none';
+                    accountSignedIn.style.display = '';
+                    document.getElementById('accountName').textContent = user.displayName || 'User';
+                    document.getElementById('accountEmail').textContent = user.email || '';
+                    document.getElementById('accountAvatar').src = user.photoURL || '';
+                } else {
+                    loginIconSvg.style.display = '';
+                    loginAvatarImg.style.display = 'none';
+                    accountSignedOut.style.display = '';
+                    accountSignedIn.style.display = 'none';
+                }
+            }
+
+            function mergeStats(local, remote) {
+                if (!remote) return local;
+                if (!local || local.gamesPlayed === 0) return remote;
+                if (remote.gamesPlayed === 0) return local;
+
+                const merged = defaultStats();
+                merged.gamesPlayed = Math.max(local.gamesPlayed, remote.gamesPlayed);
+                merged.gamesWon = Math.max(local.gamesWon, remote.gamesWon);
+                merged.maxStreak = Math.max(local.maxStreak, remote.maxStreak);
+
+                // Keep the more recent data for streaks and dates
+                const localDate = local.lastPlayedDate || '';
+                const remoteDate = remote.lastPlayedDate || '';
+                const newer = localDate >= remoteDate ? local : remote;
+                merged.currentStreak = newer.currentStreak;
+                merged.lastPlayedDate = newer.lastPlayedDate;
+                merged.lastPlayResult = newer.lastPlayResult;
+                merged.lastStartedDate = localDate >= remoteDate
+                    ? (local.lastStartedDate || remote.lastStartedDate)
+                    : (remote.lastStartedDate || local.lastStartedDate);
+
+                // Take max of each guess distribution bucket
+                [1, 2, 3, 4, 5, 'X'].forEach(function (k) {
+                    merged.guessDistribution[k] = Math.max(
+                        local.guessDistribution[k] || 0,
+                        remote.guessDistribution[k] || 0
+                    );
+                });
+
+                return merged;
+            }
+
+            // Callback set by init() to restore game state in-memory
+            var _restoreGameStateCb = null;
+
+            async function syncStatsOnLogin(user) {
+                const modes = ['default', 'summer', 'winter2026'];
+                const activeMode = getGameMode();
+
+                for (const mode of modes) {
+                    try {
+                        // --- Stats sync ---
+                        const doc = await fbDb.collection('users').doc(user.uid)
+                            .collection('stats').doc(mode).get();
+                        const remoteStats = doc.exists ? doc.data() : null;
+                        const localStats = loadStats(mode);
+
+                        if (remoteStats) {
+                            // Rule 3: Firebase has stats → use them
+                            saveStatsLocal(mode, remoteStats);
+                        } else if (localStats && localStats.gamesPlayed > 0) {
+                            // Rule 1: No remote stats, local exists → push to Firebase
+                            saveStatsToFirestore(mode, localStats);
+                        }
+
+                        // --- Game state sync (today only) ---
+                        const gameStateKey = getDateString() + '-' + mode;
+                        const localState = localStorage.getItem('olympleState-' + gameStateKey);
+                        const remoteState = await loadGameStateFromFirestore(gameStateKey);
+
+                        if (remoteState) {
+                            // Rule 3: Firebase has today's game state → use it, don't edit remote
+                            localStorage.setItem('olympleState-' + gameStateKey, JSON.stringify(remoteState));
+                            if (mode === activeMode && _restoreGameStateCb) {
+                                _restoreGameStateCb(remoteState);
+                            }
+                        } else if (localState) {
+                            // Rule 1: No remote game state, local exists → push to Firebase
+                            saveGameStateToFirestore(gameStateKey, JSON.parse(localState));
+                        }
+                    } catch (e) {
+                        console.error('Sync error for mode ' + mode + ':', e);
+                    }
+                }
+            }
+
+            function saveStatsToFirestore(mode, stats) {
+                if (!currentUser) return;
+                try {
+                    fbDb.collection('users').doc(currentUser.uid)
+                        .collection('stats').doc(mode).set(stats);
+                } catch (e) { }
+            }
+
+            function saveGameStateToFirestore(key, state) {
+                if (!currentUser) return;
+                try {
+                    fbDb.collection('users').doc(currentUser.uid)
+                        .collection('gameState').doc(key).set(state);
+                } catch (e) { }
+            }
+
+            function loadGameStateFromFirestore(key) {
+                if (!currentUser) return Promise.resolve(null);
+                return fbDb.collection('users').doc(currentUser.uid)
+                    .collection('gameState').doc(key).get()
+                    .then(function (doc) { return doc.exists ? doc.data() : null; })
+                    .catch(function () { return null; });
+            }
+
+            fbAuth.onAuthStateChanged(function (user) {
+                currentUser = user;
+                updateAuthUI(user);
+                if (user) {
+                    syncStatsOnLogin(user);
+                }
+            });
+
+            function doGoogleSignIn() {
+                var provider = new firebase.auth.GoogleAuthProvider();
+                fbAuth.signInWithPopup(provider).then(function (result) {
+                    console.log('Sign-in success:', result.user.email);
+                }).catch(function (err) {
+                    console.error('Sign-in error:', err.code, err.message);
+                    alert('Sign-in failed: ' + err.message);
+                });
+            }
+
+            document.getElementById('googleSignInBtn').addEventListener('click', doGoogleSignIn);
+
+            document.getElementById('signOutBtn').addEventListener('click', function () {
+                fbAuth.signOut();
+            });
+
+            document.getElementById('loginButton').addEventListener('click', function () {
+                if (currentUser) {
+                    var offcanvas = new bootstrap.Offcanvas(document.getElementById('settingsOffcanvas'));
+                    offcanvas.show();
+                } else {
+                    doGoogleSignIn();
+                }
+            });
+
             // --- Stats & Streaks ---
             function defaultStats() {
                 return {
@@ -804,6 +1023,12 @@
                 };
             }
 
+            function saveStatsLocal(mode, stats) {
+                try {
+                    localStorage.setItem('olympleStats-' + mode, JSON.stringify(stats));
+                } catch (e) { }
+            }
+
             function loadStats(mode) {
                 try {
                     const raw = localStorage.getItem('olympleStats-' + mode);
@@ -815,9 +1040,8 @@
             }
 
             function saveStats(mode, stats) {
-                try {
-                    localStorage.setItem('olympleStats-' + mode, JSON.stringify(stats));
-                } catch (e) { }
+                saveStatsLocal(mode, stats);
+                saveStatsToFirestore(mode, stats);
             }
 
             function getYesterdayStr(dateStr) {
@@ -1233,8 +1457,9 @@
                             won: won,
                             hintsRevealed: hintsRevealed
                         };
-                        const key = 'olympleState-' + getDateString() + '-' + gameMode;
-                        localStorage.setItem(key, JSON.stringify(state));
+                        const key = getDateString() + '-' + gameMode;
+                        localStorage.setItem('olympleState-' + key, JSON.stringify(state));
+                        saveGameStateToFirestore(key, state);
                     } catch (e) { }
                 }
 
@@ -1601,7 +1826,43 @@
                     }
                 }
 
-                // --- Restore saved state ---
+                // --- Restore game state helper (also used by Firebase sync) ---
+                function restoreGameState(saved) {
+                    guesses = saved.guesses;
+                    performances = saved.performances;
+                    guessedCountries = new Set(saved.guessedCountries);
+                    guessResults = saved.guessResults || [];
+                    completed = saved.completed || false;
+                    won = saved.won || false;
+                    hintsRevealed = saved.hintsRevealed || [false, false, false];
+
+                    // Clear guess rows: re-rendered ones get cleared, extras get placeholder restored
+                    for (let i = 1; i <= 5; i++) {
+                        const row = document.getElementById('guess_' + i);
+                        if (!row) continue;
+                        if (i <= guessResults.length) {
+                            row.innerHTML = '';
+                        } else {
+                            row.innerHTML = '<div class="col-12"><input class="form-control text-center" type="text" value="" aria-label="" disabled readonly></div>';
+                        }
+                    }
+                    guessResults.forEach((result, index) => {
+                        renderGuessRow(index + 1, result.country, result.distance, result.direction, result.proximity, result.isCorrect, false);
+                    });
+                    renderHints();
+
+                    if (completed) {
+                        document.getElementById("guess-button").disabled = true;
+                        showEndGame(won);
+                    } else if (guesses > 0) {
+                        recordGameStarted(gameMode, getDateString());
+                    }
+                }
+
+                // Register callback so syncStatsOnLogin can restore state in-memory
+                _restoreGameStateCb = restoreGameState;
+
+                // --- Restore saved state from localStorage ---
                 const stateKey = 'olympleState-' + getDateString() + '-' + gameMode;
                 try {
                     // Clean up old state from previous days
@@ -1618,30 +1879,14 @@
                     const savedRaw = localStorage.getItem(stateKey);
                     if (savedRaw) {
                         const saved = JSON.parse(savedRaw);
-                        guesses = saved.guesses;
-                        performances = saved.performances;
-                        guessedCountries = new Set(saved.guessedCountries);
-                        guessResults = saved.guessResults || [];
-                        completed = saved.completed || false;
-                        won = saved.won || false;
-                        hintsRevealed = saved.hintsRevealed || [false, false, false];
+                        restoreGameState(saved);
 
-                        guessResults.forEach((result, index) => {
-                            renderGuessRow(index + 1, result.country, result.distance, result.direction, result.proximity, result.isCorrect, false);
-                        });
-                        renderHints();
-
+                        // Migration: record stats if not yet tracked for today
                         if (completed) {
-                            // Migration: record stats if not yet tracked for today
                             const currentStats = loadStats(gameMode);
                             if (currentStats.lastPlayedDate !== getDateString()) {
                                 updateStats(gameMode, won, guesses, getDateString());
                             }
-                            document.getElementById("guess-button").disabled = true;
-                            showEndGame(won);
-                        } else if (guesses > 0) {
-                            // Game started but not completed — preserve streak
-                            recordGameStarted(gameMode, getDateString());
                         }
                     }
                 } catch (e) {
