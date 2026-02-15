@@ -49,6 +49,10 @@
         firebase.initializeApp(firebaseConfig);
         const fbAuth = firebase.auth();
         const fbDb = firebase.firestore();
+        if (new URLSearchParams(window.location.search).has('emulator')) {
+            fbAuth.useEmulator('http://localhost:9099');
+            fbDb.useEmulator('localhost', 8082);
+        }
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script type="module" defer>

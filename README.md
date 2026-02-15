@@ -81,6 +81,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Link to my profile
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 - [ ] Add a themed background
+- [ ] Banner showing off new login feature
 
 ## Roadmap
 

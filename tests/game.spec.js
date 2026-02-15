@@ -1,120 +1,5 @@
 import { test, expect } from '@playwright/test';
-
-// Helper: make a guess
-async function makeGuess(page, country) {
-  await page.fill('#searchCountries', country);
-  await page.click('#guess-button');
-  // Wait for flip animation to complete
-  await page.waitForTimeout(2000);
-}
-
-// Helper: get today's correct answer from the game
-async function getCorrectAnswer(page) {
-  return await page.evaluate(() => {
-    // Access the correct_country variable from the game's closure
-    // We extract it by reading the toast that appears after game ends
-    // Instead, replicate the puzzle selection logic
-    function getDateString() {
-      const now = new Date();
-      return now.getFullYear() + '-' +
-        String(now.getMonth() + 1).padStart(2, '0') + '-' +
-        String(now.getDate()).padStart(2, '0');
-    }
-    function hashString(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        hash = ((hash << 5) - hash) + str.charCodeAt(i);
-        hash |= 0;
-      }
-      return Math.abs(hash);
-    }
-    function mulberry32(seed) {
-      return function () {
-        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
-        let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
-        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-        return ((t ^ t >>> 14) >>> 0) / 4294967296;
-      };
-    }
-    function seededShuffle(arr, seed) {
-      const shuffled = [...arr];
-      const rng = mulberry32(seed);
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(rng() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
-
-    const EPOCH = new Date('2025-01-01');
-    const today = new Date();
-    const daysSinceEpoch = Math.floor((today - EPOCH) / (1000 * 60 * 60 * 24));
-    const gameMode = localStorage.getItem('olympleGameMode') || 'default';
-
-    // We need medal data - fetch it synchronously via XMLHttpRequest
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/olympic-medals-v2.json', false);
-    xhr.send();
-    const medalData = JSON.parse(xhr.responseText);
-
-    const CENTROID_NAME_MAP = {
-      "Ivory Coast": "Côte d'Ivoire",
-      "North Macedonia": "Macedonia [FYROM]",
-      "Curaçao": "Netherlands Antilles",
-      "Chinese Taipei": "Taiwan"
-    };
-
-    const xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', '/country-centroids.json', false);
-    xhr2.send();
-    const centroidData = JSON.parse(xhr2.responseText);
-
-    const centroidByName = {};
-    centroidData.forEach(c => { centroidByName[c.name] = true; });
-
-    const nocs = Object.keys(medalData);
-    let medalCountries = [];
-    nocs.forEach(noc => {
-      const medal = medalData[noc];
-      const centroidName = CENTROID_NAME_MAP[medal.name] || medal.name;
-      if (centroidByName[centroidName]) {
-        medalCountries.push(medal.flag + ' ' + medal.name);
-      }
-    });
-
-    if (gameMode === 'summer') {
-      medalCountries = medalCountries.filter(k => {
-        const noc = nocs.find(n => medalData[n].flag + ' ' + medalData[n].name === k);
-        return noc && medalData[noc].summer.length > 0;
-      });
-    } else if (gameMode === 'winter') {
-      medalCountries = medalCountries.filter(k => {
-        const noc = nocs.find(n => medalData[n].flag + ' ' + medalData[n].name === k);
-        return noc && medalData[noc].winter.length > 0;
-      });
-    }
-
-    medalCountries.sort();
-    const poolSize = medalCountries.length;
-    const cycleNumber = Math.floor(daysSinceEpoch / poolSize);
-    const dayInCycle = daysSinceEpoch % poolSize;
-    const cycleSeedStr = 'cycle-' + cycleNumber + (gameMode !== 'default' ? '-' + gameMode : '');
-    const cycleSeed = hashString(cycleSeedStr);
-    const shuffled = seededShuffle(medalCountries, cycleSeed);
-    return shuffled[dayInCycle];
-  });
-}
-
-// Helper: get a wrong country (any country that isn't the correct answer)
-async function getWrongCountries(page, correctAnswer) {
-  return await page.evaluate((correct) => {
-    const options = Array.from(document.querySelectorAll('#datalistCountries option'));
-    return options
-      .map(o => o.value)
-      .filter(v => v !== correct)
-      .slice(0, 5);
-  }, correctAnswer);
-}
+import { makeGuess, getCorrectAnswer, getWrongCountries } from './helpers/game-helpers.js';
 
 test.describe('Page Load & UI Elements', () => {
   test.beforeEach(async ({ page }) => {
@@ -162,9 +47,11 @@ test.describe('Page Load & UI Elements', () => {
     await expect(page.locator('#hintContainer')).toBeHidden();
   });
 
-  test('datalist has country options', async ({ page }) => {
-    const optionCount = await page.locator('#datalistCountries option').count();
-    expect(optionCount).toBeGreaterThan(100);
+  test('autocomplete shows country suggestions', async ({ page }) => {
+    await page.fill('#searchCountries', 'fra');
+    await page.waitForTimeout(500);
+    const suggestionCount = await page.locator('#autocompleteList .list-group-item').count();
+    expect(suggestionCount).toBeGreaterThan(0);
   });
 });
 
@@ -198,19 +85,15 @@ test.describe('Guess Flow', () => {
     const inputs = page.locator('#guess_1 input');
     await expect(inputs).toHaveCount(4);
 
-    // Country cell should contain the guessed country name
     const countryValue = await inputs.nth(0).inputValue();
     expect(countryValue).toBeTruthy();
 
-    // Distance cell should end with 'km'
     const distValue = await inputs.nth(1).inputValue();
     expect(distValue).toMatch(/\d+km/);
 
-    // Direction cell should be an arrow emoji or celebration
     const dirValue = await inputs.nth(2).inputValue();
     expect(dirValue).toBeTruthy();
 
-    // Accuracy cell should end with '%'
     const accValue = await inputs.nth(3).inputValue();
     expect(accValue).toMatch(/\d+%/);
   });
@@ -438,11 +321,9 @@ test.describe('Hint System', () => {
 
     await makeGuess(page, wrongCountries[0]);
 
-    // hint-flag is locked after 1 guess
     const lockedHint = page.locator('#hint-flag.hint-locked');
     await lockedHint.click({ force: true });
 
-    // Should still be locked
     await expect(page.locator('#hint-flag.hint-locked')).toBeVisible();
   });
 
@@ -490,7 +371,6 @@ test.describe('Game State Persistence', () => {
     const correctAnswer = await getCorrectAnswer(page);
     await makeGuess(page, correctAnswer);
 
-    // Close the modal
     await page.locator('#endGameModal .btn-close').click();
     await page.waitForTimeout(500);
 
@@ -534,7 +414,6 @@ test.describe('How To Play Modal', () => {
     await page.reload();
     await page.waitForSelector('#guess-button');
 
-    // Click the info icon (SVG with data-bs-target="#howToPlayModal")
     await page.locator('[data-bs-target="#howToPlayModal"]').click();
 
     await expect(page.locator('#howToPlayModal')).toBeVisible();
@@ -553,11 +432,9 @@ test.describe('Game Mode Switching', () => {
   });
 
   test('summer mode toggle updates game mode', async ({ page }) => {
-    // Open settings
     await page.locator('[data-bs-target="#settingsOffcanvas"]').click();
     await expect(page.locator('#settingsOffcanvas')).toBeVisible();
 
-    // Toggle summer mode - this triggers a page reload
     await page.locator('#summerModeToggle').check();
     await page.waitForSelector('#guess-button');
 
@@ -569,17 +446,23 @@ test.describe('Game Mode Switching', () => {
   });
 
   test('winter mode toggle updates game mode', async ({ page }) => {
+    // First switch to summer so winter toggle actually changes something
     await page.locator('[data-bs-target="#settingsOffcanvas"]').click();
     await expect(page.locator('#settingsOffcanvas')).toBeVisible();
+    await page.locator('#summerModeToggle').check();
+    await page.waitForSelector('#guess-button');
 
+    // Now switch to winter
+    await page.locator('[data-bs-target="#settingsOffcanvas"]').click();
+    await expect(page.locator('#settingsOffcanvas')).toBeVisible();
     await page.locator('#winterModeToggle').check();
     await page.waitForSelector('#guess-button');
 
     const mode = await page.evaluate(() => localStorage.getItem('olympleGameMode'));
-    expect(mode).toBe('winter');
+    expect(mode).toBe('winter2026');
 
     const titleText = await page.locator('#gameTitle').textContent();
-    expect(titleText).toContain('❄️');
+    expect(titleText).toContain('🏔️');
   });
 });
 
@@ -597,7 +480,6 @@ test.describe('Share Functionality', () => {
     const correctAnswer = await getCorrectAnswer(page);
     await makeGuess(page, correctAnswer);
 
-    // Click share button in the page (not modal)
     await page.locator('#endGameModal .btn-close').click();
     await page.waitForTimeout(500);
     await page.locator('#globalShareButton').click();
@@ -606,7 +488,7 @@ test.describe('Share Functionality', () => {
     const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
     expect(clipboardText).toContain('#DailyOlymple');
     expect(clipboardText).toContain('1/5');
-    expect(clipboardText).toContain('https://olymple.vercel.app');
+    expect(clipboardText).toContain('https://www.olymple.com');
     expect(clipboardText).toContain('🟩🟩🟩🟩🟩');
   });
 });

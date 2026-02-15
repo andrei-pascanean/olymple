@@ -3,3 +3,6 @@ CLAUDE.md
 node_modules/
 test-results/
 playwright-report/
+firebase-debug.log
+firestore-debug.log
+*.jdk
