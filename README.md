@@ -81,12 +81,13 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Link to my profile
 - [ ] Show a countdown timer to the next daily puzzle after completing today's game
 - [ ] Add a themed background
-- [ ] Banner showing off new login feature
+- [x] Banner showing off new login feature
+- [ ] Add a leaderboard with anonymized fun names that combine a color + animal
 
 ## Roadmap
 
 ### Core Game Enhancements
-- [ ] Persistent stats & streaks — win rate, guess distribution histogram, current/max streak in localStorage
+- [x] Persistent stats & streaks — win rate, guess distribution histogram, current/max streak in localStorage
 - [ ] Hard mode — hide gold/silver/bronze breakdown, show only total medals per sport
 - [ ] Easy mode — only countries with 50+ total medals
 - [ ] Historical nations (Soviet Union, Yugoslavia, East/West Germany, etc.)
