@@ -414,6 +414,9 @@
                         <p class="text-center"><code>accuracy = 100 - (distance / 20,000) × 100</code></p>
                         <p class="mb-0">So <strong>1,000km away = 95%</strong>, <strong>10,000km away = 50%</strong>,
                             and <strong>0km = 100%</strong>.</p>
+                        <hr>
+                        <h6>Sync your progress</h6>
+                        <p class="mb-0">Tap the <strong>profile icon</strong> in the header and sign in with Google to save your stats and game progress to the cloud. Your data syncs automatically, so you can pick up where you left off on any device.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
@@ -536,6 +539,16 @@
                     <span><strong>🏔️ Milano Cortina 2026</strong> — Winter Olympics Edition</span>
                     <button type="button" class="btn-close ms-2 flex-shrink-0" aria-label="Close"
                         id="winter2026BannerClose"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-2" id="signInBanner" style="display: none;">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="alert alert-light border fade show d-flex align-items-center justify-content-center mb-0 py-2"
+                    role="alert" style="font-size: 0.9rem;">
+                    <span>Sign in to sync your stats across devices — tap the <strong>profile icon</strong> in the header</span>
+                    <button type="button" class="btn-close ms-2 flex-shrink-0" aria-label="Close"
+                        id="signInBannerClose"></button>
                 </div>
             </div>
         </div>
@@ -1997,6 +2010,19 @@
                         document.getElementById('winter2026Banner').style.display = 'none';
                     });
                 }
+
+                // Show sign-in banner only after auth state resolves
+                document.getElementById('signInBannerClose').addEventListener('click', () => {
+                    localStorage.setItem('olympleSignInBannerDismissed', 'true');
+                    document.getElementById('signInBanner').style.display = 'none';
+                });
+                fbAuth.onAuthStateChanged(function (user) {
+                    if (!user && !localStorage.getItem('olympleSignInBannerDismissed')) {
+                        document.getElementById('signInBanner').style.display = '';
+                    } else {
+                        document.getElementById('signInBanner').style.display = 'none';
+                    }
+                });
             })();
         </script>
 </body>
