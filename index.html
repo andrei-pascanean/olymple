@@ -1332,6 +1332,7 @@
                             e.preventDefault();
                             input.value = country;
                             autocompleteList.style.display = 'none';
+                            selectedIndex = -1;
                         });
                         autocompleteList.appendChild(li);
                     });
@@ -1923,7 +1924,9 @@
                         e.preventDefault();
                         if (selectedIndex >= 0 && items[selectedIndex]) {
                             input.value = items[selectedIndex].textContent;
+                            autocompleteList.innerHTML = '';
                             autocompleteList.style.display = 'none';
+                            selectedIndex = -1;
                         } else {
                             handleGuess();
                         }
