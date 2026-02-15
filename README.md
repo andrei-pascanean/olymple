@@ -73,7 +73,7 @@ A daily Olympic medal guessing game. Players are shown medal counts across summe
 - [x] Open Graph meta tags — title, description, and preview image for social sharing
 - [x] Dark mode — auto-detect via `prefers-color-scheme`, optional manual toggle in settings. Maybe try 32/44/71 RGB here?
 - [x] Winter Olympics mode by default — set winter mode for first-time visitors with a dismissible banner, returning players keep their preference
-- [ ] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
+- [x] Persistent stats & streaks — win rate, guess distribution, current/max streak in localStorage
 
 ### Nice to have features
 - [x] Link to the wiki pages for x country at the olympics
