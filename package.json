@@ -4,10 +4,12 @@
   "scripts": {
     "test": "npx playwright test",
     "test:auth": "npx playwright test tests/auth-sync.spec.js",
-    "test:game": "npx playwright test tests/game.spec.js"
+    "test:game": "npx playwright test tests/game.spec.js",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@playwright/test": "^1.50.0",
-    "firebase-tools": "^13.0.0"
+    "firebase-tools": "^13.0.0",
+    "husky": "^9.1.7"
   }
 }

@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for known safe patterns"
+# Allow the Firebase client-side API key (public identifier, not a secret)
+# and test helper files with fake credentials
+regexes = ['''AIzaSyDca8aS8MvHSwXRPKPl-TohZJg8pkSdB08''']
+paths = [
+  '''tests/helpers/firebase-emulator\.js''',
+]

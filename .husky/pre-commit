@@ -1,0 +1,6 @@
+if command -v gitleaks &> /dev/null; then
+  gitleaks git --pre-commit --staged --verbose
+else
+  echo "Warning: gitleaks is not installed. Skipping secret scan."
+  echo "Install it with: brew install gitleaks"
+fi

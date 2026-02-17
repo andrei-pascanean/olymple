@@ -6,3 +6,12 @@ playwright-report/
 firebase-debug.log
 firestore-debug.log
 *.jdk
+
+# Secrets & credentials
+.env
+.env.*
+*.pem
+*.key
+serviceAccountKey.json
+*-credentials.json
+*-service-account.json
